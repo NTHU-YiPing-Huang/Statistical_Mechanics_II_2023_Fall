@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Ginsburg Landau theory &#8212; Statistical Mechanics (II)</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Epilogue" href="biblio.html" />
+    <link rel="prev" title="Overview of the course" href="overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistical Mechanics (II)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
+                    Syllabus for Statistical Mechanics (II) – PHYS522000
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview of the course
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The Ginsburg Landau theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biblio.html">
+   Epilogue
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FGinsburg_Landau.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Ginsburg_Landau.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-phases-and-phase-transitions">
+   Motivation – Phases and phase transitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-field-theory-for-ising-model">
+   Mean-field theory for Ising model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concept-of-order-parameter">
+   Concept of order parameter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-landau-free-energy">
+   The “Landau free energy”
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-little-bit-of-reverse-engineering">
+     A little bit of reverse engineering…
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-postulates">
+     The postulates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#phenomenological-landau-theory-for-the-ising-model">
+     Phenomenological Landau theory for the Ising model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#constructing-the-landau-free-energy">
+       Constructing the Landau free energy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-critical-exponents">
+       The critical exponents
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#effects-of-external-fields">
+       Effects of external fields
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-microscopic-meaning-of-the-landau-free-energy">
+   The microscopic meaning of the “Landau free energy”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-functional-integral-representation-of-landau-theory">
+   The functional integral representation of Landau theory
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Ginsburg Landau theory</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation-phases-and-phase-transitions">
+   Motivation – Phases and phase transitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean-field-theory-for-ising-model">
+   Mean-field theory for Ising model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concept-of-order-parameter">
+   Concept of order parameter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-landau-free-energy">
+   The “Landau free energy”
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-little-bit-of-reverse-engineering">
+     A little bit of reverse engineering…
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-postulates">
+     The postulates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#phenomenological-landau-theory-for-the-ising-model">
+     Phenomenological Landau theory for the Ising model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#constructing-the-landau-free-energy">
+       Constructing the Landau free energy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-critical-exponents">
+       The critical exponents
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#effects-of-external-fields">
+       Effects of external fields
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-microscopic-meaning-of-the-landau-free-energy">
+   The microscopic meaning of the “Landau free energy”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-functional-integral-representation-of-landau-theory">
+   The functional integral representation of Landau theory
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="the-ginsburg-landau-theory">
+<h1>The Ginsburg Landau theory<a class="headerlink" href="#the-ginsburg-landau-theory" title="Permalink to this headline">#</a></h1>
+<p>We will introduce the Ginsburg Landau theory which is a theory that describes the definition of phases and the transitions between them. The theory heavily relies on the principle of symmetry which will become more clear as we introduce the postulates and the structure of the theory. Before everything, let’s understand what is the problem and what kind of tools we have at hands.</p>
+<section id="motivation-phases-and-phase-transitions">
+<h2>Motivation – Phases and phase transitions<a class="headerlink" href="#motivation-phases-and-phase-transitions" title="Permalink to this headline">#</a></h2>
+<p>Phases characterizes the pattern of collective behavior of a many-body system. When the pattern changes, we have a phase transition. In the equilibrium statistical mechanics, we learned that phases and phase transitions could be understood by the partition function. The key to have a well-defined notion of phase transition is to study the question at the thermodynamic limit where we could have non-analytic behavior from the combination of infinite many analytic functions.</p>
+<p>The partition function for a system can be formally expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+Z(N,\beta)=\sum_{c\in \mathcal{C}} e^{-\beta E(c)}\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(N\)</span> is the number of degrees of freedom, <span class="math notranslate nohighlight">\(\beta=(k_B T)^{-1}\)</span>, <span class="math notranslate nohighlight">\(c\)</span> represent an arbitrary configuration of the system in the configuration space <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> and <span class="math notranslate nohighlight">\(E(c)\)</span> is the energy of the corresponding configuration <span class="math notranslate nohighlight">\(c\)</span>.</p>
+<p>With the partition function defined, the probability of the configuration <span class="math notranslate nohighlight">\(c\)</span> can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[
+P(c)=\frac{1}{Z}e^{-\beta E(c)}; \sum_{c\in\mathcal{C}} P(c)=1\text{(The normalization condition).}
+\]</div>
+<p>The partition function is related to the free energy by a simple change of variable.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Z(N,\beta)&amp;=\sum_{c\in \mathcal{C}} e^{-\beta E(c)}=\sum_{E}\sum_{c\in \mathcal{C}}\delta_{E,E(c)} e^{-\beta E(c)}\\
+&amp;=\sum_{E} \underbrace{w(E)}_{\text{number of configurations at the specific energy } E} e^{-\beta E(c)}\\
+&amp;=\sum_E e^{-\beta E+\ln[w(E)]}=e^{-\beta F(N,\beta)}\text{.}
+\end{split}\]</div>
+<p>The competition between energetics and the entropy can be observed clearly by taking derivative with respect to <span class="math notranslate nohighlight">\(\beta\)</span> to the normalization condition above.</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{c\in\mathcal{C}} e^{\beta[F(N,\beta)-E(c)]}\left\{ \left[F(N,\beta)-E(c)\right]+\beta\left(\frac{\partial F}{\partial \beta}\right)_N\right\}=0
+\]</div>
+<p>The above equality leads to</p>
+<div class="math notranslate nohighlight">
+\[
+F(N,\beta)=\sum_{c\in\mathcal{C}}P(c)E(c)-\beta\sum_{c\in\mathcal{C}}P(c)\left(\frac{\partial F}{\partial \beta}\right)_N=\langle H\rangle -T \langle \left(-\partial_T F\right)_N\rangle\text{.}
+\]</div>
+<p>Adjusting temperature changes the weighting of <span class="math notranslate nohighlight">\(\langle H\rangle\)</span> and <span class="math notranslate nohighlight">\(T \langle \left(-\partial_T F\right)_N\rangle\)</span>.  At low temperature limit, the first term dominates. At the high temperature limit, the latter dominates.</p>
+</section>
+<section id="mean-field-theory-for-ising-model">
+<h2>Mean-field theory for Ising model<a class="headerlink" href="#mean-field-theory-for-ising-model" title="Permalink to this headline">#</a></h2>
+<p>To have a more specific picture about the above abstract idea. Let’s take the simplest non-trivial model for the study of phases– the ferromagnetic Ising model.</p>
+<p>The model is defined by interacting binary variables <span class="math notranslate nohighlight">\(\sigma_i=\{+1,-1\}\)</span> on lattice site <span class="math notranslate nohighlight">\(i\)</span>. The Hamiltonian for the system <span class="math notranslate nohighlight">\(\Omega\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+H_{\Omega}=-J\sum_{\langle i,j\rangle} \sigma_i\sigma_j, J&gt;0\text{.}
+\]</div>
+<p>Here, the binary variables prefer to have the same sign as dictated by the energy scale <span class="math notranslate nohighlight">\(J\)</span>.</p>
+<p>The system has the global Ising symmetry, <span class="math notranslate nohighlight">\(\sigma_i\to-\sigma_i\)</span>, which keep the Hamiltonian invariant. There are other symmetries such as the lattice symmetry which we will see does not play an important role for the discussion of the phase transition.</p>
+<p>The probability of a spin configuration <span class="math notranslate nohighlight">\(P(c=\{\sigma_1,\sigma_2,\cdots,\sigma_N\})\)</span> factorizes under the mean-field theory assumption. <em>i.e.</em> <span class="math notranslate nohighlight">\(P(c=\{\sigma_1,\sigma_2,\cdots,\sigma_N\})\xrightarrow{MFT} \prod_{i=1}^N P_{MFT}(\sigma_i)\)</span>. The corresponding probability <span class="math notranslate nohighlight">\(P_{MFT}(\sigma_i)\)</span> is then determined in a self-consistent fashion.</p>
+<p>The formal procedure is to replace the spin spin coupling using the expectation value that is determined by <span class="math notranslate nohighlight">\(P_{MFT}(\sigma_i)\)</span>. The replacement is valid when we assume the fluctuation <span class="math notranslate nohighlight">\(\delta \sigma \equiv \sigma_i-\langle \sigma_i\rangle_{MFT}\)</span> is small and we only include terms up to <span class="math notranslate nohighlight">\(\mathcal{O}(\delta \sigma)\)</span>. The replacement</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_i\sigma_j\to \langle \sigma_i \rangle_{MFT} \sigma_j+\sigma_i\langle \sigma_j\rangle_{MFT}-\langle \sigma_i\rangle_{MFT}\langle \sigma_j\rangle_{MFT}
+\]</div>
+<p>effectively reduce the problem into a single particle problem with an effective magnetic field, <span class="math notranslate nohighlight">\(h_{eff,i}=\sum_{j\neq i} J_{ij}\langle \sigma_j\rangle_{MFT}\)</span>, applied on a single spin. For those who are not familiar with the mean-field theory approach, please check the lecture note of statistical mechanics (I).</p>
+<p>We can stand back and ask what is the key assumption in the mean-field theory? It turns out the assumption that <span class="math notranslate nohighlight">\(\delta \sigma\approx0\)</span> is the key for the mean-field theory to work. If the statement is true, then we can drop the fluctuation. This situation happened when the system is deep in a specific phase. On the other hand, when the system is near the transition, the fluctuation is not small, then the approach will be problematic. We will revisit this issue later. For now, let’s pretend the mean-field theory is valid for all temperature range and move on to do the corresponding calculation.</p>
+<p>The key equation for us to solve is the self-consistency equation. At this step, I will put back the coupling with the external magnetic field, <span class="math notranslate nohighlight">\(h\)</span>, to remind ourselves about how to use the mean-field theory to calculate the critical exponents. The self-consistency equation is</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \sigma_i\rangle_{MFT}=m=\tanh\left[ \beta (h+m k_B T_c)\right]; T_c=\frac{2dJ}{k_B}\text{.}
+\]</div>
+<p>Once <span class="math notranslate nohighlight">\(m\)</span> is determined, we can construct the effective magnetic field and recover <span class="math notranslate nohighlight">\(P_{MFT}(\sigma_i)\)</span>. With these information, we can calculate the critical exponents by expanding the self-consistency equation near the critical temperature.</p>
+</section>
+<section id="concept-of-order-parameter">
+<h2>Concept of order parameter<a class="headerlink" href="#concept-of-order-parameter" title="Permalink to this headline">#</a></h2>
+<p>One can immediate notice that <span class="math notranslate nohighlight">\(\langle \sigma_i\rangle_{MFT}\)</span> plays an important role in the above approach. It is actually the parameter that specifies the corresponding order. When <span class="math notranslate nohighlight">\(\langle \sigma_i\rangle_{MFT}\neq0\)</span>, it specifies the system is ordered. However, the quantity is defined within the mean-field theory. Why not promoting this idea to a more general setting beyond the mean-field theory. After all, the mean-field theory is just a theory for us to approximate the <span class="math notranslate nohighlight">\(P(\{\sigma_1,\sigma_2,\cdots,\sigma_N\})\)</span>.</p>
+<p>We can take the idea and define an observable <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>. When <span class="math notranslate nohighlight">\(\langle \mathcal{O}\rangle \neq0\)</span>, the probability distribution develop some kind of collective pattern that is specified by <span class="math notranslate nohighlight">\(\langle \mathcal{O}\rangle\)</span>, so we call it the <em>order parameter</em>. The order parameter can be a scalar, a vector, a tensor or even a function. We will focus on the simple case for now. For the Ising model, it is just the magnitude of <span class="math notranslate nohighlight">\(m\)</span>.</p>
+</section>
+<section id="the-landau-free-energy">
+<h2>The “Landau free energy”<a class="headerlink" href="#the-landau-free-energy" title="Permalink to this headline">#</a></h2>
+<section id="a-little-bit-of-reverse-engineering">
+<h3>A little bit of reverse engineering…<a class="headerlink" href="#a-little-bit-of-reverse-engineering" title="Permalink to this headline">#</a></h3>
+<p>Now we know the idea of the mean-field theory and the order parameter. For different problems, we will need to run the same machinery again and again. Can we find the common features between those mean-field theories? The key equation seems to be the self-consistency equation. Can we make some physical arguments and directly get the essential information of the self-consistency equation?</p>
+<p>Let’s first define what do we mean by the essential information. In the study of critical phenomena, we basically look for the so-called critical exponents. When the temperature is near the critical temperature, the order parameter will be small and we might expand the self-consistency equation and solve them approximately. In the case of Ising model, we essentially can do the analysis by sending <span class="math notranslate nohighlight">\(T\to T_c\)</span> and <span class="math notranslate nohighlight">\(m\approx0\)</span> at small external field <span class="math notranslate nohighlight">\(h\)</span>. The self-consistency equation becomes</p>
+<div class="math notranslate nohighlight" id="equation-critical-equation">
+<span class="eqno">(1)<a class="headerlink" href="#equation-critical-equation" title="Permalink to this equation">#</a></span>\[\begin{split}
+\frac{h}{k_B T}\approx (1-\tau)m+\left[\tau-\tau^2+\frac{\tau^3}{3}\right]m^3+\cdots\\
+\text{or equivalently}\\
+(1-\tau)m+\left[\tau-\tau^2+\frac{\tau^3}{3}\right]m^3-\frac{h}{k_B T}\approx
+\end{split}\]</div>
+<p>here, <span class="math notranslate nohighlight">\(\tau=\frac{T_c}{T}\)</span> and we can get all the critical exponents starting from this equation.</p>
+<p>So the question is: can we define some kind of concept that is similar to the free energy in thermodynamics and minimize it to get the above self-consistency equation near the critical temperature? If we can do that, that concept will be useful. Then we can go back and ask how to justify this seemly <em>ad hoc</em> free energy on a physical ground.</p>
+<p>Let’s just try to do the exercise for our Ising model problem with equation <a class="reference internal" href="#equation-critical-equation">(1)</a>. If we define some kind of “free energy” <span class="math notranslate nohighlight">\(\Gamma(T,J,h,m)\)</span>. We can always devide it into parts that are independent of <span class="math notranslate nohighlight">\(m\)</span> completely and parts that depends on <span class="math notranslate nohighlight">\(m\)</span> implicitly. We would like to have the part that has implcit dependence on <span class="math notranslate nohighlight">\(m\)</span> provides the minimization equation which is equivalent to <a class="reference internal" href="#equation-critical-equation">(1)</a>. The following construction will work.</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(T,J,h,m)\equiv \Gamma_0(T,J,h)+\underbrace{U[\Gamma_0(T,J,h)]}_{\text{To make sure the expression has the right unit.}}\int dm K(T,J,h,m)\text{.}
+\]</div>
+<p>The minimization condition is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \Gamma}{\partial m}=0=(1-\tau)m+\left[\tau-\tau^2+\frac{\tau^3}{3}\right]m^3-\frac{h}{k_B T}\text{.}
+\]</div>
+<p>So we can see the idea is very tempting! It is indeed possible at least formally. If we perform the last integral, we can see</p>
+<div class="math notranslate nohighlight">
+\[
+\Gamma(T,J,h,m)\equiv \Gamma_0(T,J,h)+U[\Gamma_0(T,J,h)]\left\{(1-\tau)\frac{m^2}{2}+\left[\tau-\tau^2+\frac{\tau^3}{3}\right]\frac{m^4}{4}-\frac{h}{k_BT}m\right\}\text{.}
+\]</div>
+<p>All the important information is hidden in the last term. The question is: can we have a theoretical argument to construct it directly? It turns out, it is the Landau theory.</p>
+</section>
+<section id="the-postulates">
+<h3>The postulates<a class="headerlink" href="#the-postulates" title="Permalink to this headline">#</a></h3>
+<p>Here we discuss the postulates for the Landau theory. The key step toward the physical argument of the Landau theory is to identify the transformation property of the order parameter under the symmetry of the system. We will discuss the postulates first and apply it to the Ising model and see what we can learn during the procedure.</p>
+<ol>
+<li><p>We can construct the Landau free energy, <span class="math notranslate nohighlight">\(L\)</span>, as</p>
+<div class="math notranslate nohighlight">
+\[
+   L\left[\left\{K_i\right\},\eta\right]
+   \]</div>
+<p>with the order parameter <span class="math notranslate nohighlight">\(\eta\)</span> and couplings <span class="math notranslate nohighlight">\(\{K_i\}\)</span>.</p>
+</li>
+<li><p>How to construct <span class="math notranslate nohighlight">\(L\)</span>?</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> transforms under the symmetry of the system.</p></li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> is invariant under the symmetry transformation.</p></li>
+</ol>
+<p>Taking the Ising model as an example, the order parameter <span class="math notranslate nohighlight">\(\eta=\langle \sigma_i\rangle\xrightarrow{\text{Ising symmetry}}-\eta\)</span>. As the temperature is below the critical temperature, <span class="math notranslate nohighlight">\(\eta\neq0\)</span>. The symmetry is spontaneously broken. When the temperature is above the critical temperature <span class="math notranslate nohighlight">\(\eta=0\)</span> the symmetry is preserved.</p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(L\)</span> is analytic in <span class="math notranslate nohighlight">\(\eta\)</span> around <span class="math notranslate nohighlight">\(\eta=0\)</span>. We will see that it is convenient to discuss the density of <span class="math notranslate nohighlight">\(L\)</span> defined as</p>
+<div class="math notranslate nohighlight">
+\[
+   \mathcal{L}=\frac{L}{V}=\sum_{p=0}^{\infty}a_p(\{K_i\})\eta^p\text{ when } \eta\approx0\text{.}
+   \]</div>
+</li>
+<li><p>For inhomogeneous system, we require <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> to be a local function of <span class="math notranslate nohighlight">\(\eta(\textbf{r})\)</span> and <span class="math notranslate nohighlight">\(\nabla^q \eta(\textbf{r})\)</span> with <span class="math notranslate nohighlight">\(q\)</span> finite.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(T&gt;T_c\)</span>, the solution of the minimization equation of <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is <span class="math notranslate nohighlight">\(\eta=0\)</span>. When <span class="math notranslate nohighlight">\(T&lt;T_c\)</span>, the solution is <span class="math notranslate nohighlight">\(\eta\neq0\)</span>.</p></li>
+</ol>
+</section>
+<section id="phenomenological-landau-theory-for-the-ising-model">
+<h3>Phenomenological Landau theory for the Ising model<a class="headerlink" href="#phenomenological-landau-theory-for-the-ising-model" title="Permalink to this headline">#</a></h3>
+<section id="constructing-the-landau-free-energy">
+<h4>Constructing the Landau free energy<a class="headerlink" href="#constructing-the-landau-free-energy" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="the-critical-exponents">
+<h4>The critical exponents<a class="headerlink" href="#the-critical-exponents" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="effects-of-external-fields">
+<h4>Effects of external fields<a class="headerlink" href="#effects-of-external-fields" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+</section>
+<section id="the-microscopic-meaning-of-the-landau-free-energy">
+<h2>The microscopic meaning of the “Landau free energy”<a class="headerlink" href="#the-microscopic-meaning-of-the-landau-free-energy" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="the-functional-integral-representation-of-landau-theory">
+<h2>The functional integral representation of Landau theory<a class="headerlink" href="#the-functional-integral-representation-of-landau-theory" title="Permalink to this headline">#</a></h2>
+<p>microscopic meaning of each parameter</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="overview.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Overview of the course</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="biblio.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Epilogue</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Yi-Ping Huang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Hilbert space and Hamiltonian &#8212; Statistical Mechanics (II)</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistical Mechanics (II)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
+                    Syllabus for Statistical Mechanics (II) – PHYS522000
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview of the course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ginsburg_Landau.html">
+   The Ginsburg Landau theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biblio.html">
+   Epilogue
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FFermion_Boson.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Fermion_Boson.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   The Hilbert space and Hamiltonian
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fermions-or-bosons-from-two-particle-systems">
+     Fermions or bosons? From two particle systems
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantum-many-body-system-non-interacting-limit">
+     Quantum many-body system (non-interacting limit)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-hilbert-space">
+       The Hilbert space
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-many-body-hamiltonian">
+       The many-body Hamiltonian
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partition-function-for-free-fermions-and-bosons">
+   Partition function for free fermions and bosons
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classical-limit-of-the-quantum-gases">
+     Classical limit of the quantum gases
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#degenerate-fermi-gases">
+     Degenerate Fermi gases
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#degenerated-bose-gases">
+     Degenerated Bose gases
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Hilbert space and Hamiltonian</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   The Hilbert space and Hamiltonian
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fermions-or-bosons-from-two-particle-systems">
+     Fermions or bosons? From two particle systems
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantum-many-body-system-non-interacting-limit">
+     Quantum many-body system (non-interacting limit)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-hilbert-space">
+       The Hilbert space
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-many-body-hamiltonian">
+       The many-body Hamiltonian
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partition-function-for-free-fermions-and-bosons">
+   Partition function for free fermions and bosons
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classical-limit-of-the-quantum-gases">
+     Classical limit of the quantum gases
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#degenerate-fermi-gases">
+     Degenerate Fermi gases
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#degenerated-bose-gases">
+     Degenerated Bose gases
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="the-hilbert-space-and-hamiltonian">
+<h1>The Hilbert space and Hamiltonian<a class="headerlink" href="#the-hilbert-space-and-hamiltonian" title="Permalink to this headline">#</a></h1>
+<section id="fermions-or-bosons-from-two-particle-systems">
+<h2>Fermions or bosons? From two particle systems<a class="headerlink" href="#fermions-or-bosons-from-two-particle-systems" title="Permalink to this headline">#</a></h2>
+<p>The most important difference between a classical and a quantum system is now the status of the system is described by a wave function. What qualitative new structure will be given by this difference? The wave function description will lead to a striking effect when we consider the many-particle systems since we loose the ability to distinguish identical particles by their “path”.</p>
+<p>Identical particles are the particles with identical intrinsic properties such as mass, charge, spin, <em>etc.</em>. For classical systems, we can always use the path to track individual particles in principle. However, this becomes impossible when the wave functions between two particles has overlap with each other. The difficulty came from the uncertainty of the positions of those particles.</p>
+<p>Because of that, when the two wave function has measurable overlap, the probability description of the two particles should be indistinguishable, <em>i.e.</em> <span class="math notranslate nohighlight">\(P(\textbf{x}_1,\textbf{x}_2)=P(\textbf{x}_1,\textbf{x}_2)\)</span>. Because the probability of the quantum system is related to the norm square of the wave function. That automatically leads to the fact that the corresponding two particle wave function is equal up to a phase factor. <em>i.e.</em> <span class="math notranslate nohighlight">\(\phi(\textbf{x}_1,\textbf{x}_2)=e^{i\theta}\phi(\textbf{x}_2,\textbf{x}_1)\)</span>. Let’s consider this effect as we swap the particle 1 and particle 2 of our original wave function. We immediately notice that swapping twice will return to the original wave function. That is, <span class="math notranslate nohighlight">\((e^{i \theta})^2=1\)</span>. So we have <span class="math notranslate nohighlight">\(e^{i\theta}=\pm 1\)</span>. For bosons, we have <span class="math notranslate nohighlight">\(e^{i\theta}= +1\)</span>. For fermions, we have <span class="math notranslate nohighlight">\(e^{i\theta}= -1\)</span>. This is the starting point to discuss quantum statistics.</p>
+<p>From the property that <span class="math notranslate nohighlight">\(\phi(\textbf{x}_1,\textbf{x}_2)=\pm\phi(\textbf{x}_2,\textbf{x}_1)\)</span>. We can divide the wave functions into two big categories. The symmetrized wave function, for bosons, and the anti-symmetrized wave function, for fermions.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\phi^{B}(\textbf{x}_1,\textbf{x}_2)=\phi_a(\textbf{x}_1)\phi_b(\textbf{x}_2)+\phi_a(\textbf{x}_2)\phi_b(\textbf{x}_1)\\
+\phi^{F}(\textbf{x}_1,\textbf{x}_2)=\phi_a(\textbf{x}_1)\phi_b(\textbf{x}_2)-\phi_a(\textbf{x}_2)\phi_b(\textbf{x}_1)\text{.}
+\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(a,b\)</span> are the quantum number of the system. For fermion, we can see if <span class="math notranslate nohighlight">\(a=b\)</span>, the wave function becomes zero. That is the Pauli exclusive principle applied to this simple setting.</p>
+<p>For example, photon and phonon are bosons. Electron and neutron are fermions.</p>
+<div class="tip admonition">
+<p class="admonition-title">What?</p>
+<p>It seems above argument is quite general. However, something sutble will happen in two-dimensional space. There, the swapping operation is not so trivial. Therefore, a different quantum statistical behavior other than fermion or boson is possible. Such a particle is called ‘anyon’. One of the simplest model demonstrate anyon physics is the <a class="reference external" href="https://topocondmat.org/index.html">toric code model</a>. Anyons could be used in quantum computation and therefore has attract lots of attention recently. Some recent breakthrough on related subjects including <span id="id1">[]</span> and <span id="id2">[]</span>.</p>
+</div>
+</section>
+<section id="quantum-many-body-system-non-interacting-limit">
+<h2>Quantum many-body system (non-interacting limit)<a class="headerlink" href="#quantum-many-body-system-non-interacting-limit" title="Permalink to this headline">#</a></h2>
+<p>Now we know we have Fermions and Bosons. How to describe such a quantum system? To define a quantum system, we need to specify the Hamiltonian, <span class="math notranslate nohighlight">\(H\)</span>, and the corresponding Hilbert space,<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>. Here, I will give a quick overview of the general description of quantum many-body systems with <span class="math notranslate nohighlight">\(N\)</span> particles.</p>
+<section id="the-hilbert-space">
+<h3>The Hilbert space<a class="headerlink" href="#the-hilbert-space" title="Permalink to this headline">#</a></h3>
+<p>Let’s consider the wave function of distinguishable many-body system first. Since the particles are distinguishable, we can label the Hilbert space accordingly. The total Hilbert space is</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2\otimes\cdots\mathcal{H}_N
+\]</div>
+<p>The state in this Hilbert space can be represented by</p>
+<div class="math notranslate nohighlight">
+\[
+\vert \psi\rangle=\vert\phi _{\gamma_1}\rangle_1\otimes\vert\phi _{\gamma_2}\rangle_2\otimes\cdots\vert\phi _{\gamma_N}\rangle_N\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\vert\phi_{\gamma_i}\rangle_j\)</span> is the complete set in <span class="math notranslate nohighlight">\(\mathcal{H}_j\)</span> with quantum number <span class="math notranslate nohighlight">\(\gamma_i\)</span>.
+Next, we can ask how a wave function is represented as ket vectors in our simple two particle example above.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\phi^{B/F}(\textbf{x}_1,\textbf{x}_2)=\sqrt{2}^{-1}\left[\phi_{\gamma_1}(\textbf{x}_1)\phi_{\gamma_2}(\textbf{x}_2)\pm \phi_{\gamma_1}(\textbf{x}_2)\phi_{\gamma_2}(\textbf{x}_1)\right]=\langle \textbf{x}_1,\textbf{x}_2\vert \phi^{B/F}\rangle\\
+\vert \phi^{B/F}\rangle = \frac{1}{\sqrt{2}}\left[\vert\phi_{\gamma_1}\rangle_1\otimes \vert\phi_{\gamma_2}\rangle_2\pm \vert\phi_{\gamma_1}\rangle_2\otimes \vert \phi_{\gamma_2}\rangle_1\right] \text{.}
+\end{split}\]</div>
+<p>Comparing the simple two particle wave function and the wave function of distinguishable particles, we can get some hint about how should we proceed for a general <span class="math notranslate nohighlight">\(N\)</span> particle system – symmetric summation or anti-symmetric summation.</p>
+<p>The generalization for <span class="math notranslate nohighlight">\(N\)</span> particle system should be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\vert \phi^B_N\rangle =\sqrt{N!}^{-1}P_{S}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangle_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_N\right]\\
+\vert \phi^F_N\rangle =\sqrt{N!}^{-1}P_{AS}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangle_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_N\right]
+\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[
+P_{S/AS}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangle_2 \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_N\right]=\sum_{p}\eta^{\overline{p}}\vert \phi_{\gamma_1}\rangle_{p(1)} \otimes\vert \phi_{\gamma_2}\rangle_{p(2)} \otimes\cdots\otimes\vert \phi_{\gamma_N}\rangle_{p(N)}\text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\eta=\pm1\)</span> for symmetric or anti-symmetric summation, <span class="math notranslate nohighlight">\(p\)</span> is an element of the <span class="math notranslate nohighlight">\(N\)</span> object permutation. <span class="math notranslate nohighlight">\(p(j)\)</span> is the <span class="math notranslate nohighlight">\(j\)</span>-th object of this permutation. <span class="math notranslate nohighlight">\(\overline{p}\)</span> represent an integer which is the number required to swap nearby elements in the permutation <span class="math notranslate nohighlight">\(p\)</span> such that it gets back to an ordered permutation. For example, for a 3 object permutation <span class="math notranslate nohighlight">\(p=[231]\)</span>, <span class="math notranslate nohighlight">\(\overline{p}=2\)</span> since we need to swap 31 then swap 21 to get to the permutation <span class="math notranslate nohighlight">\([123]\)</span>.  The summation contains <span class="math notranslate nohighlight">\(N!\)</span> terms. That’s why the normalization factor is <span class="math notranslate nohighlight">\(\sqrt{N!}^{-1}\)</span>.</p>
+<p>From this construction, we can also see the Pauli exclusion principle. When <span class="math notranslate nohighlight">\(\gamma_i=\gamma_j\)</span>, the pairs of permutations related by a swap between <span class="math notranslate nohighlight">\(p(i)\)</span> and <span class="math notranslate nohighlight">\(p(j)\)</span> will differ by a minus sign. All such pairs therefore cancels with each other and leads to the Pauli exclusion principle.</p>
+<p>We start from something simple and derive the generalized form for the many-body wave function when the indistinguishable nature of quantum particles are considered.</p>
+</section>
+<section id="the-many-body-hamiltonian">
+<h3>The many-body Hamiltonian<a class="headerlink" href="#the-many-body-hamiltonian" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+H=\sum_i H_i+\underbrace{\sum_{i,j} H_{i,j}+...}_{=0,\text{for non-interacting systems}}\text{.}
+\]</div>
+<p>When we diagonalize the many-body Hamiltonian, <span class="math notranslate nohighlight">\(H\)</span>, we will have the many-body eigen energy spectrum, <span class="math notranslate nohighlight">\(\left\{E_{\gamma}\right\}\)</span> and the many-body eigen states, <span class="math notranslate nohighlight">\(\left\{\vert E_{\gamma}\rangle\right\}\)</span>.</p>
+<p>What exactly do we mean by <span class="math notranslate nohighlight">\(\sum_i H_i\)</span>. The correct interpretation of <span class="math notranslate nohighlight">\(H_i\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+H_i=\textbf{1}_1\otimes\textbf{1}_2\otimes\cdots\textbf{1}_{i-1}\otimes H_i\otimes \textbf{1}_{i+1}\cdots \otimes\textbf{1}_N
+\]</div>
+<p>That is, the operator <span class="math notranslate nohighlight">\(H_i\)</span> only acts non-trivially on the Hilbert space of the <span class="math notranslate nohighlight">\(i\)</span>-th particle.</p>
+<p>Suppose the kets <span class="math notranslate nohighlight">\(\vert \phi_{\gamma'}\rangle_j\)</span> are the eigenstates of the Hamiltonian <span class="math notranslate nohighlight">\(H_j\)</span>, <em>i.e.</em> <span class="math notranslate nohighlight">\(H_j|\phi_{\gamma'}\rangle_j=E_{\gamma'}|\phi_{\gamma'}\rangle_j\)</span>. The corresponding eigenstates with many-body energy <span class="math notranslate nohighlight">\(E_{\gamma}\)</span> is <span class="math notranslate nohighlight">\(H\vert \phi ^{B/F}_N\rangle=\left(\sum_j E_{\gamma_j}\right) \vert \phi^{B/F}_N\rangle=E_{\gamma}\vert \phi^{B/F}_N\rangle\)</span>. The big difference of boson and fermion is the Pauli exclusion principle, we can have all the bosons sitting on the same state to lower the total energy; for fermions, they need to be stacked one by one. That corresponds to the two very important concepts, the Bose-Einstein condensation and the concept of fermi sea.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="partition-function-for-free-fermions-and-bosons">
+<h1>Partition function for free fermions and bosons<a class="headerlink" href="#partition-function-for-free-fermions-and-bosons" title="Permalink to this headline">#</a></h1>
+<p>In principle, the <span class="math notranslate nohighlight">\(\gamma_j\)</span> in the above expression of the many-body wave function can be any quantum number. For example, for a free particle, <span class="math notranslate nohighlight">\(\gamma_j\)</span> can be the index of momentum <span class="math notranslate nohighlight">\(p_j\)</span>. We can describe our system as the <span class="math notranslate nohighlight">\(j\)</span>-th particle has momentum <span class="math notranslate nohighlight">\(p_j\)</span> then symmetrize/anti-symmetrize the whole wave function as we did currently. However, one can also use another representation to describe the state. That is, we know don’t have the concept of <span class="math notranslate nohighlight">\(j\)</span>-th particle, maybe we can just count how many particles have a specific momentum <span class="math notranslate nohighlight">\(p_a\)</span>. Then, we can describe our system using those numbers <span class="math notranslate nohighlight">\(\{n_{p_1},n_{p_2},\cdots, n_{p_a},\cdots\}\)</span>. If we did so for our <span class="math notranslate nohighlight">\(N\)</span> particle system, the representation must satisfy the constraint that <span class="math notranslate nohighlight">\(\sum_a n_{p_a}=N\)</span>. Here, we use <span class="math notranslate nohighlight">\(a\)</span>, which is the index for the quantum number (momentum in this case), as a distinct label with the index of the particle <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>Let’s start from here to construct the canonical ensemble of quantum gases with internal degree of freedom <span class="math notranslate nohighlight">\(\alpha\)</span> using the occupation number representation.</p>
+<div class="math notranslate nohighlight">
+\[
+Z_N=\sum_{\alpha}\sum_{\{n_{p_a,\alpha}\}} \delta_{\left(\sum_{\alpha}\sum_a n_{p_a,\alpha}\right),N} \exp\left[-\beta\left(\sum_{\alpha}\sum_{a}\frac{\textbf{p}_a^2}{2m}n_{p_a,\alpha}\right)\right]\text{.}
+\]</div>
+<p>This representation is nice, since we consider the indistinguishable nature of the quantum identical particles. No index for the label of particles anymore! However, we need to pay the price for the nontrivial constraint given by the Kronecker delta function. It is very tempting to relax the constraint by switching to the grand canonical ensemble where we introduce the chemical potential. We then have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Z_{GC}=\sum_{N=0}^\infty Z_N e^{\beta \mu N}=\sum_{\alpha}\sum_{\{n_{\textbf{p}_a}\}} \exp\left[-\beta\left(\sum_{\alpha}\sum_{a}\left(\underbrace{\frac{\textbf{p}_a^2}{2m}}_{\epsilon(\textbf{p}_a,\alpha)}-\mu\right)n_{\textbf{p}_a,\alpha}\right)\right]\\
+\xrightarrow{\text{factorizable}}\prod_{\alpha} \prod_{\textbf{p}_a} \underbrace{\left[\sum_{n_{\textbf{p}_a}} \exp\left(-\beta (\epsilon(\textbf{p}_a)-\mu) n_{\textbf{p}_a,\alpha}\right)\right]}_{\zeta(\epsilon(\textbf{p}_a,\alpha)-\mu)}\text{.}
+\end{split}\]</div>
+<p>Here, we take advantage of the factorizable structure of a partition function for interacting free systems. Also, the specific form of the energy of the system is not important. We simply replace that by <span class="math notranslate nohighlight">\(\epsilon(\textbf{p}_a)\)</span>.</p>
+<p>For fermions, we have <span class="math notranslate nohighlight">\(n_{\textbf{p},\alpha}=0,1\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\zeta(\epsilon(\textbf{p},\alpha)-\mu)=\zeta_F(\epsilon(\textbf{p},\alpha)-\mu)=1+\exp\left[-\beta(\epsilon(\textbf{p},\alpha)-\mu)\right]\text{.}
+\]</div>
+<p>For bosons, we have <span class="math notranslate nohighlight">\(n_{\textbf{p},\alpha}=0,1,\cdots, \infty\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\zeta(\epsilon(\textbf{p},\alpha)-\mu)=\zeta_B(\epsilon(\textbf{p},\alpha)-\mu)=\frac{1}{1-\exp\left[-\beta(\epsilon(\textbf{p},\alpha)-\mu)\right]}\text{.}
+\]</div>
+<p>The two result could be summarized into</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta(\epsilon(\textbf{p},\alpha)-\mu)=\zeta_{\eta}(\epsilon(\textbf{p},\alpha)-\mu)=\left(1-\eta\exp\left[-\beta(\epsilon(\textbf{p},\alpha)-\mu)\right]\right)^{-\eta}
+\]</div>
+<p>with  <span class="math notranslate nohighlight">\(\eta=+1/-1\)</span> for bosons/fermions. If we try to think about what is the meaning of <span class="math notranslate nohighlight">\(\zeta_{\eta}\)</span>. We can realize that <span class="math notranslate nohighlight">\(\zeta_{\eta}(\epsilon(\textbf{p},\alpha)-\mu)\)</span> is like the grand partition function for the mode <span class="math notranslate nohighlight">\((\textbf{p},\alpha)\)</span>! So even though we are studying a many-particle system, once we relax the particle number constraint by going to the grand canonical ensemble, we can study the grand partition function for each mode as if they are independent!</p>
+<p>From now on, we will use the <span class="math notranslate nohighlight">\(\zeta_{\eta}\)</span> function to get the general expression of the grand canonical partition function and the corresponding thermodynamic potential for non-interacting fermions and bosons.</p>
+<p>To move forward, we will try to derive the expression of <span class="math notranslate nohighlight">\(\ln Z_{GC}\)</span>. We immediately see</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+-\frac{\Omega}{k_BT}=\ln Z_{GC}=
+\sum_{\alpha}\sum_{\textbf{p}_a}\ln \zeta_{\eta}(\epsilon(\textbf{p}_a,\alpha)-\mu)\\
+\xrightarrow{\text{trivial sum of } \alpha}
+(2S+1)\sum_{\textbf{p}_a}\ln \zeta_{\eta}(\epsilon(\textbf{p}_a)-\mu)=(2S+1)\sum_{\textbf{p}_a}\left(-\frac{\Omega_{\textbf{p}_a}}{k_BT}\right)
+\text{.}
+\end{split}\]</div>
+<p>In the last line, if we assume the energy <span class="math notranslate nohighlight">\(\epsilon(\textbf{p}_a,\alpha)\)</span> is independent of the internal degree of freedome <span class="math notranslate nohighlight">\(\alpha\)</span> (such as spin), we expect the summation over <span class="math notranslate nohighlight">\(\alpha\)</span> only provides a trivial factor. In the simple cases such as interacting free fermi/bose gases, we expect this relation to hold. Therefore, <span class="math notranslate nohighlight">\(\sum_{\alpha}\to (2S+1)\)</span>. Here, we assume we are discussing particles that are not gauge particles, so the internal degrees of freedom is related to the spin value <span class="math notranslate nohighlight">\(S\)</span>. ( <em>e.g.</em> Spin <span class="math notranslate nohighlight">\(1/2\)</span> has two possible internal states, spin up or spin down. It turns out, there is a <strong>spin-statistics theorem</strong> for Lorentz invariant systems. We will leave the readers to check the quantum field theory textbooks. <span id="id3">[]</span> )</p>
+<p>Once we take the log, the product over <span class="math notranslate nohighlight">\(\textbf{p}_a\)</span> turns into a summation. So we can ask the question. What is the expectation value of particles sitting at the particular momentum <span class="math notranslate nohighlight">\(\textbf{p}_a\)</span>? We can again see the influence of the interacting free assumption and the advantage of using grand canonical ensemble, the modes are basically decoupled! So when we ask the average value of the occupation number, we can simply evaluate it using <span class="math notranslate nohighlight">\(\langle n_{\textbf{p}_a}\rangle= -\frac{\partial \Omega_{\textbf{p}_a}}{\partial \mu}\)</span>. That is,</p>
+<div class="math notranslate nohighlight">
+\[
+\langle n_{\textbf{p}_a}\rangle= -\frac{\partial \Omega_{\textbf{p}_a}}{\partial \mu}=-\frac{\partial}{\partial \mu} (-\eta)(-\beta)^{-1}\ln(1-\eta e^{\beta(\mu-\epsilon(\textbf{p}_a))})=\frac{e^{\beta(\mu-\epsilon(\textbf{p}_a))}}{1-\eta e^{\beta(\mu-\epsilon(\textbf{p}_a))}}=\frac{1}{e^{\beta(\epsilon(\textbf{p}_a)-\mu)}-\eta}\text{.}
+\]</div>
+<p>This is the average number of fermions/bosons to occupy a state <span class="math notranslate nohighlight">\(\textbf{p}_a\)</span>. The corresponding function form is called the Fermi-Dirac/ Bose-Einstein distribution function. In the process to derive this expression, we did not use any properties related to the energy is quadratic in momentum. The expression actually holds for all possible quantum sates as long as the system described by the quantum number is non-interacting. Therefore, we should have a more general expression</p>
+<div class="math notranslate nohighlight">
+\[
+\langle n_{\gamma}\rangle=\frac{1}{e^{\beta(\epsilon(\gamma)-\mu)}-\eta}
+\]</div>
+<p>for a single particle state <span class="math notranslate nohighlight">\(\gamma\)</span>. This is the famous Fermi-Dirac distribution function(<span class="math notranslate nohighlight">\(\eta=-1\)</span>) or the Bose-Einstein distribution function(<span class="math notranslate nohighlight">\(\eta=+1\)</span>).</p>
+<p>Let’s try to see what happened if we put back the quadratic momentum dependence in the <span class="math notranslate nohighlight">\(\epsilon(\textbf{p})=\frac{\textbf{p}^2}{2m}\)</span> and the fugacity <span class="math notranslate nohighlight">\(z=e^{\beta \mu}\)</span>.</p>
+<p>We will have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ln Z_{GC}=(2S+1)\left(\frac{L}{h}\right)^3\int d^3{\textbf{p}} (-\eta) \ln\left[1-\eta z e^{-\frac{\textbf{p}^2}{2mk_BT}}\right]\\
+=(2S+1)\left(\frac{L}{h}\right)^3(4\pi)\int_0^{\infty}p^2dp (-\eta) \ln\left[1-\eta z e^{-\frac{\textbf{p}^2}{2mk_BT}}\right]\\
+\xrightarrow{p=\sqrt{2mk_BT}\tilde{p}}(2S+1)\left(\frac{L}{h}\right)^3(4\pi)\sqrt{2mk_BT}^3 (-\eta) \int_0^{\infty}\tilde{p}^2d\tilde{p}\ln\left[1-\eta z e^{-\tilde{p}^2}\right]
+\end{split}\]</div>
+<p>Using the relation <span class="math notranslate nohighlight">\(\ln(1+x)=-\sum_{n=1}^{\infty} \frac{(-x)^n}{n}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\ln Z_{GC}=(2S+1)(4\pi) L^3\sqrt{\frac{2mk_BT}{h^2}}^3 (\eta) \left[\sum_{n=1}^{\infty}\frac{(\eta z)^n }{n}\int_0^{\infty}\tilde{p}^2e^{-n\tilde{p}^2}d\tilde{p}\right]\\
+\end{split}\]</div>
+<p>We can notice the integral over <span class="math notranslate nohighlight">\(\tilde{p}\)</span> is a Gaussian integral that we can derive exactly. This is the additional information from the quadratic momentum dependency of <span class="math notranslate nohighlight">\(\epsilon(\textbf{p})\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[	
+\int_{0}^{\infty} q^2 e^{-nq^2}dq=\frac{1}{2}\left[ -\frac{\partial}{\partial n}\int_{-\infty}^{\infty}e^{-nq^2}dq \right]=\frac{1}{2}\left[ -\frac{\partial}{\partial n} \sqrt{\frac{\pi}{n}}\right]=\frac{1}{2}\frac{1}{2}\sqrt{\pi}n^{-\frac{3}{2}}\text{.}
+\]</div>
+<p>Using above result, spin-statistics theorem (<span class="math notranslate nohighlight">\(\eta\to(-1)^{2S}\)</span>) and the definition of polylog function <span class="math notranslate nohighlight">\(\phi_{\alpha}(z)=\sum_{n=1}^{\infty}\frac{z^n}{n^{\alpha}}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\ln Z_{GC}=\eta (2S+1) \left(\frac{L}{\lambda}\right)^3 \phi_{\frac{5}{2}}(\eta z)
+=(-1)^{2S} (2S+1) \left(\frac{L}{\lambda}\right)^3 \phi_{\frac{5}{2}}((-1)^{2S} z)\text{.}
+\]</div>
+<p>The expectation value of the total particle number is</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \hat{N}\rangle=N= z\frac{\partial }{\partial z}\ln Z_{GC}= \eta (2S+1) \left(\frac{L}{\lambda}\right)^3 \phi_{\frac{3}{2}}(\eta z)\text{.}
+\]</div>
+<p>Here we use the relation <span class="math notranslate nohighlight">\(z\frac{\partial}{\partial z} \phi_{\alpha}(cz)=\phi_{\alpha-1}(cz)\)</span>.</p>
+<section id="classical-limit-of-the-quantum-gases">
+<h2>Classical limit of the quantum gases<a class="headerlink" href="#classical-limit-of-the-quantum-gases" title="Permalink to this headline">#</a></h2>
+<p>When <span class="math notranslate nohighlight">\(z\ll 1\)</span>, we can approximate <span class="math notranslate nohighlight">\(\phi_{\alpha}(\eta z)\sim \eta z\)</span>. In that limit, we can solve <span class="math notranslate nohighlight">\(z\)</span> as a function of <span class="math notranslate nohighlight">\(N\)</span>. We have</p>
+<div class="math notranslate nohighlight">
+\[
+z\approx \frac{1}{2S+1}\frac{N\lambda^3}{L^3}\equiv \frac{1}{2S+1} \xi\text{.}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\xi=\frac{\lambda^3}{L^3/N}\)</span> is dimensionless parameter which is the ratio between the de Broglie’s thermal volume and the average volume occupied by a particle.</p>
+<p>Here is a self-consistency check, we assume <span class="math notranslate nohighlight">\(z\ll1\)</span> to simplify the relation of <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(z\)</span>. This leads to an expression of <span class="math notranslate nohighlight">\(z\)</span> as a function of <span class="math notranslate nohighlight">\(\xi\)</span>. In this limit, we can also see that <span class="math notranslate nohighlight">\(\ln Z_{GC}\approx N=\frac{pV}{k_BT}\)</span> is the classical equation of state. And we know at the classical limit corresponds to the <span class="math notranslate nohighlight">\(\xi\ll1\)</span> limit. So <span class="math notranslate nohighlight">\(z\)</span> which is proportional with <span class="math notranslate nohighlight">\(\xi\)</span> is indeed a small quantity. So we finish the loop of internal consistency.</p>
+<p>This derivation suggest that we can use <span class="math notranslate nohighlight">\(\xi\)</span> to tell whether we are in the <em>quantum degenerate</em> region which means we need to consider the quantum statistics of our system. If <span class="math notranslate nohighlight">\(\xi\ll1\)</span>, we expect the quantum statistics can be neglected and we reach the classical limit. When <span class="math notranslate nohighlight">\(\xi\sim \mathcal{O}(1)\)</span>, we consider the system to be quantum degenerate.</p>
+</section>
+<section id="degenerate-fermi-gases">
+<h2>Degenerate Fermi gases<a class="headerlink" href="#degenerate-fermi-gases" title="Permalink to this headline">#</a></h2>
+<p>Now let’s think about the quantum limit and if the system is formed by fermions. As we have discussed, the Pauli exclusion principle will play an important role for the statistical behavior of the system. Let’s take the Fermi-Dirac distribution function and think about the meaning of this result. When <span class="math notranslate nohighlight">\(\eta=-1\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+n_{F}(\epsilon)=\frac{1}{e^{\beta[\epsilon-\mu]}+1}&lt;1\text{.}
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\epsilon\)</span> is the single particle energy of the occupied state.
+The first thing we should notice is the distribution function is always smaller than 1! That reflects the Pauli exclusion principle. At the low temperature limit, we have <span class="math notranslate nohighlight">\(\beta\to\infty\)</span>.The sign of <span class="math notranslate nohighlight">\(\epsilon-\mu\)</span> will change the value of <span class="math notranslate nohighlight">\(n_{F}\)</span> significantly. When <span class="math notranslate nohighlight">\(\epsilon&gt;\mu\)</span>, <span class="math notranslate nohighlight">\(n_{F}\to0\)</span>; when <span class="math notranslate nohighlight">\(\epsilon&lt;\mu\)</span>, <span class="math notranslate nohighlight">\(n_{F}\to1\)</span>. At <span class="math notranslate nohighlight">\(T=0\)</span> the threshold <span class="math notranslate nohighlight">\(\mu(T=0)\)</span> is the Fermi energy, <span class="math notranslate nohighlight">\(E_F\)</span>, which represent the maximum energy of the occupied states. For arbitrary temperature, we have</p>
+<div class="math notranslate nohighlight">
+\[
+N=V\int_0^{\infty} dE g(E)n_F(E) \text{.}
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(g(E)\)</span> is the density of states per volume at energy <span class="math notranslate nohighlight">\(E\)</span>.
+We can calculate the fermi energy for given particle number <span class="math notranslate nohighlight">\(N\)</span> easily by sending <span class="math notranslate nohighlight">\(T\to0\)</span>. At this limit, we have</p>
+<div class="math notranslate nohighlight">
+\[
+N=V\int_0^{\mu(T=0)=E_F} dE g(E) 
+\]</div>
+<p>since <span class="math notranslate nohighlight">\(n_F(E)\)</span> becomes a step function. The density of states will depends on the Hamiltonian of the system. Once we have that information, we can express the fermi energy as a function of particle number <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>One important behavior of the Fermi-Dirac distribution function is the linear temperature dependence of the low energy specific heat. This behavior is quite general and can be considered via the following argument.</p>
+<p>The specific heat is related to the change of energy <span class="math notranslate nohighlight">\(\Delta E\)</span> when the temperature is changed. Because most of the states at low energy is occupied, therefore, they will not contribute to the change of energy as we smoothly varying the temperature. Therefore, we only care about the states near the fermi energy. At temperature <span class="math notranslate nohighlight">\(T\)</span> only states within the energy window <span class="math notranslate nohighlight">\(\Delta E\approx k_BT\)</span> will be the active states. The number of such state is <span class="math notranslate nohighlight">\(D(E_F)\Delta E= D(E_F)k_BT\)</span>. Since the particle number is fixed, the thermal fluctuation will just drive the fermions from some lower energy state to a higher energy state. The change of energy is of the scale <span class="math notranslate nohighlight">\(k_BT\)</span>. For a system with <span class="math notranslate nohighlight">\(E_F\gg k_BT\)</span>, the energy change can be approximated as <span class="math notranslate nohighlight">\(\delta E=(D(E_F)k_B \delta T)(k_BT)\)</span>. Therefore, we expect <span class="math notranslate nohighlight">\(C=\frac{\delta E}{\delta T}\propto T\)</span>. Therefore, if we observe low temperature specific heat has a linear temperature dependence. It is suggesting the low energy carrier might be fermions forming a fermi sea. And the states near the fermi surface contribute to the energy transport.</p>
+<p>To have a more detailed calculation of electrons in metal. We can apply the <a class="reference external" href="https://en.wikipedia.org/wiki/Sommerfeld_expansion">Sommerfeld expansion</a> to the Fermi-Dirac distribution. I will leave it as an exercise for the readers.</p>
+</section>
+<section id="degenerated-bose-gases">
+<h2>Degenerated Bose gases<a class="headerlink" href="#degenerated-bose-gases" title="Permalink to this headline">#</a></h2>
+<p>Let’s focuse on the <span class="math notranslate nohighlight">\(\eta=+1\)</span> case for bosons.</p>
+<div class="math notranslate nohighlight">
+\[
+n_{B}(\epsilon)=\frac{1}{e^{\beta[\epsilon-\mu]}-1}\text{.}
+\]</div>
+<p>This expression came form the geometric series with ratio <span class="math notranslate nohighlight">\(e^{-\beta(\epsilon-\mu)}&lt;1\)</span>. Suppose we choose the energy minimum of the system to be the zero point of energy. Then we have the condition that the fugacity <span class="math notranslate nohighlight">\(z=e^{\beta\mu}&lt;1\)</span> which implies <span class="math notranslate nohighlight">\(\mu&lt;0\)</span>.</p>
+<p>The total particle number of the system in <span class="math notranslate nohighlight">\(D\)</span> spatial dimension can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+N=(2S+1)\sum_{\textbf{p}_a} n_B(\textbf{p}_a)=(2S+1)\left(\frac{L}{h}\right)^D \int_0^{\infty} S_Dp^{D-1}dp\frac{1}{e^{\frac{p^2}{2mk_BT}}z^{-1}-1}\\
+\xrightarrow{p\to\sqrt{2mk_BT} x}
+(2S+1)L^D\left(\sqrt{\frac{2\pi mk_BT}{h^2}}\right)^D\frac{2}{\Gamma(D/2)}\underbrace{\int_0^{\infty}ze^{-x^2}\frac{1}{1-ze^{-x^2}} x^{D-1}dx}_{\text{monotonic increasing function of }z}\\
+=(2S+1)\left(\frac{L}{\lambda}\right)^D\frac{2}{\Gamma(D/2)}\sum_{n=1}^{\infty} z^n \underbrace{\int_0^{\infty}x^{D-1} e^{-nx^2}dx}_{\Gamma(D/2)/(2n^{D/2})}\\
+=(2S+1)\left(\frac{L}{\lambda}\right)^D\phi_{D/2}(z)&lt;(2S+1)\left(\frac{L}{\lambda}\right)^D\phi_{D/2}(z=1)
+\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(D=2\)</span> corresponds to the Riemann zeta function <span class="math notranslate nohighlight">\(\zeta_R(1)\to\infty\)</span>. When <span class="math notranslate nohighlight">\(D=3\)</span>, we have <span class="math notranslate nohighlight">\(\zeta_R(3/2)\approx 2.6...\)</span>. When <span class="math notranslate nohighlight">\(\phi_{D/2}(1)=C_D\)</span> is finite, we got an inequality that the total particle number must satisfied.</p>
+<div class="math notranslate nohighlight">
+\[
+N&lt;(2S+1)C_D\left(\frac{L}{\lambda}\right)^{D}
+\]</div>
+<p>However, as we know <span class="math notranslate nohighlight">\(\lambda\propto T^{-1/2}\)</span>. As <span class="math notranslate nohighlight">\(T\to0\)</span>, <span class="math notranslate nohighlight">\(\lambda\to\infty\)</span>. At the temperature <span class="math notranslate nohighlight">\(T_c\)</span> this inequality will be violated. How is it possible? What went wrong in our derivation?
+It turns out the argument above fails when <span class="math notranslate nohighlight">\(n_B(\epsilon)\)</span> have singular behavior. When we are at <span class="math notranslate nohighlight">\(\textbf{p}=0\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+n_B(0)=\frac{1}{z^{-1}-1}\text{.}
+\]</div>
+<p>When we send <span class="math notranslate nohighlight">\(z\to1\)</span> to get the upper bound of <span class="math notranslate nohighlight">\(N\)</span>, the occupation number at <span class="math notranslate nohighlight">\(\textbf{p}=0\)</span> diverges. That is, the replacement of the discrete summation and the integral needs to be interpreted more carefully.</p>
+<p>Once we observe this behavior, we know we should separate the <span class="math notranslate nohighlight">\(\textbf{p}=0\)</span> mode with the rest <span class="math notranslate nohighlight">\(\textbf{p}\neq0\)</span> modes. The <span class="math notranslate nohighlight">\(\textbf{p}\neq0\)</span> modes can be approximated by the integral expression without problem. Therefore, we can calculate the particles occupying the <span class="math notranslate nohighlight">\(\textbf{p}=0\)</span> mode by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+N_{\textbf{p}=0}=N-N_{\textbf{p}\neq0}=N-(2S+1)\left(\frac{L}{\lambda}\right)^D\phi_{D/2}(z)&gt;N-(2S+1)\left(\frac{L}{\lambda}\right)^D\phi_{D/2}(1)\\
+=N\left[1-\underbrace{(2S+1)\frac{1}{N}\left(\frac{L\sqrt{2\pi m k_B}}{h}\right)^D\phi_{D/2}(1)}_{T_c^{-D/2}} T^{D/2}\right]=N\left[1-\left(\frac{T}{T_c}\right)^{D/2}\right]
+\end{split}\]</div>
+<p>On the other hand, the fugacity <span class="math notranslate nohighlight">\(z\)</span> is determined by the number of particles at <span class="math notranslate nohighlight">\(\textbf{p}\neq0\)</span>. That is,</p>
+<div class="math notranslate nohighlight">
+\[
+N_{\textbf{p}\neq0}=(2S+1)\left(\frac{L}{\lambda}\right)^D\phi_{D/2}(z)&lt;(2S+1)\left(\frac{L}{\lambda}\right)^D\phi_{D/2}(1)\equiv N_{\textbf{p}\neq0}^M\text{.}
+\]</div>
+<p>When <span class="math notranslate nohighlight">\(N&lt;N_{\textbf{p}\neq0}^M\)</span>, everything is fine, since we can always find states with <span class="math notranslate nohighlight">\(\textbf{p}\neq0\)</span> to put our bosons and adjust <span class="math notranslate nohighlight">\(z\)</span> accordingly. If we keep adding more bosons to the system at the same temperature then <span class="math notranslate nohighlight">\(z\)</span> starts to increase and approaches 1. At some critical value of particle number, we can no longer put states at <span class="math notranslate nohighlight">\(\textbf{p}\neq0\)</span> since they are “filled”. The only place to put the boson is to put them at <span class="math notranslate nohighlight">\(\textbf{p}=0\)</span>.
+From the Bose-Einstein distribution, we have <span class="math notranslate nohighlight">\(N_0=\frac{1}{z^-1-1}\)</span>. We can find <span class="math notranslate nohighlight">\(z=\frac{N_0}{N_0+1}\)</span>. When the boson is put at <span class="math notranslate nohighlight">\(\textbf{p}=0\)</span>, <span class="math notranslate nohighlight">\(N_0\)</span> increases and <span class="math notranslate nohighlight">\(z\)</span> gets closer to 1. When <span class="math notranslate nohighlight">\(N_0\)</span> is large, we can see <span class="math notranslate nohighlight">\(z\)</span> approaches 1 as <span class="math notranslate nohighlight">\(z\approx 1-N_0^{-1}\)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Yi-Ping Huang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

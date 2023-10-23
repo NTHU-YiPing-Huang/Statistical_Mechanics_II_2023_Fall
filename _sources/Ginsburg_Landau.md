@@ -145,7 +145,49 @@ Here we discuss the postulates for the Landau theory. The key step toward the ph
 
 ### Phenomenological Landau theory for the Ising model
 
+Let's try to construct the phenomenological Landau theory for the Ising model. 
+
+$$
+H=-J\sum_{\langle i,j\rangle}S_iS_j; J>0\text{.}
+$$
+
+The important object is the order parameter. In this case, the symmetry of the Hamiltonian is the Ising symmetry $S_i\to-S_i$. The simplest observable that breaks the symmetry is $\langle S_i\rangle\equiv \eta$. We will use it to be the order parameter and construct the corresponding Landau free energy. 
+
 #### Constructing the Landau free energy
+
+We start our process by considering the homogeneous case where $\eta(\textbf{r})=\eta$ and $\nabla \eta(\textbf{r})=0$. From the postulate 3 we know
+
+$$
+\mathcal{L}=a_0(J,T)+a_1(J,T)\eta+a_2(J,T)\eta^2+a_3(J,T)\eta^3+a_4(J,T)\eta^4+\cdots
+$$
+
+From postulate 2, the Ising symmetry requires $\mathcal{L}(\eta)=\mathcal{L}(-\eta)$. Therefore, we only keep the even power terms.
+
+$$
+\mathcal{L}=a_0(J,T)+a_2(J,T)\eta^2+a_4(J,T)\eta^4+\cdots
+$$
+To avoid the cluttering notation, we will supress the $(J,T)$ dependence. But we should keep in mind that those coeficients all depends on $J$ and $T$ implicitly.
+
+We will use postulate 5 to determine the behavior of the phenomenological constants across the critical temperature $T_c$. We first notice the minimization condition of the Landau free energy has two solutions
+
+$$
+\frac{\partial \mathcal{L}}{\partial \eta}=2a_2\eta+4a_4\eta^3=0
+$$
+
+with two solutions
+
+$$
+\eta=
+\left\{
+\begin{array}{c}
+0\\
+\pm \sqrt{-\frac{a_2}{2a_4}}\equiv \pm \eta_{SB}
+\end{array}
+\right.
+\text{.}
+$$
+
+Our goal is to have $\eta=0$ to be the stable solution for the Landau free energy when $T>T_c$ and $\eta=\pm\eta_{SB}$ when $T<T_c$. How to achieve our goal? We can make the following observation, the functional form of the Landau free energy is essentially a quadratic equation in disguise. That is, we can rewrite the free energy in the form of $A_1(\eta^2+A_2)^2$. If $A_2>0$, the free energy is minimized when $\eta^2=\eta=0$. If $A_2<0$, the free energy is minimized when $\eta^2=-A_2>0$. Therefore, we can reverse engineer the properties we want. That is, we require $a_2(J,T)$ to change sign accordingly at $T=T_c$!
 
 #### The critical exponents
 

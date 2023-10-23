@@ -592,8 +592,43 @@ H_{\Omega}=-J\sum_{\langle i,j\rangle} \sigma_i\sigma_j, J&gt;0\text{.}
 </section>
 <section id="phenomenological-landau-theory-for-the-ising-model">
 <h3>Phenomenological Landau theory for the Ising model<a class="headerlink" href="#phenomenological-landau-theory-for-the-ising-model" title="Permalink to this headline">#</a></h3>
+<p>Let’s try to construct the phenomenological Landau theory for the Ising model.</p>
+<div class="math notranslate nohighlight">
+\[
+H=-J\sum_{\langle i,j\rangle}S_iS_j; J&gt;0\text{.}
+\]</div>
+<p>The important object is the order parameter. In this case, the symmetry of the Hamiltonian is the Ising symmetry <span class="math notranslate nohighlight">\(S_i\to-S_i\)</span>. The simplest observable that breaks the symmetry is <span class="math notranslate nohighlight">\(\langle S_i\rangle\equiv \eta\)</span>. We will use it to be the order parameter and construct the corresponding Landau free energy.</p>
 <section id="constructing-the-landau-free-energy">
 <h4>Constructing the Landau free energy<a class="headerlink" href="#constructing-the-landau-free-energy" title="Permalink to this headline">#</a></h4>
+<p>We start our process by considering the homogeneous case where <span class="math notranslate nohighlight">\(\eta(\textbf{r})=\eta\)</span> and <span class="math notranslate nohighlight">\(\nabla \eta(\textbf{r})=0\)</span>. From the postulate 3 we know</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}=a_0(J,T)+a_1(J,T)\eta+a_2(J,T)\eta^2+a_3(J,T)\eta^3+a_4(J,T)\eta^4+\cdots
+\]</div>
+<p>From postulate 2, the Ising symmetry requires <span class="math notranslate nohighlight">\(\mathcal{L}(\eta)=\mathcal{L}(-\eta)\)</span>. Therefore, we only keep the even power terms.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}=a_0(J,T)+a_2(J,T)\eta^2+a_4(J,T)\eta^4+\cdots
+\]</div>
+<p>To avoid the cluttering notation, we will supress the <span class="math notranslate nohighlight">\((J,T)\)</span> dependence. But we should keep in mind that those coeficients all depends on <span class="math notranslate nohighlight">\(J\)</span> and <span class="math notranslate nohighlight">\(T\)</span> implicitly.</p>
+<p>We will use postulate 5 to determine the behavior of the phenomenological constants across the critical temperature <span class="math notranslate nohighlight">\(T_c\)</span>. We first notice the minimization condition of the Landau free energy has two solutions</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \mathcal{L}}{\partial \eta}=2a_2\eta+4a_4\eta^3=0
+\]</div>
+<p>with two solutions</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\eta=
+\left\{
+\begin{array}{c}
+0\\
+\pm \sqrt{-\frac{a_2}{2a_4}}\equiv \pm \eta_{SB}
+\end{array}
+\right.
+\text{.}
+\end{split}\]</div>
+<p>Our goal is to have <span class="math notranslate nohighlight">\(\eta=0\)</span> to be the stable solution for the Landau free energy when <span class="math notranslate nohighlight">\(T&gt;T_c\)</span> and <span class="math notranslate nohighlight">\(\eta=\pm\eta_{SB}\)</span> when <span class="math notranslate nohighlight">\(T&lt;T_c\)</span>. How to achieve our goal? We can make the following observation, the functional form of the Landau free energy is essentially a quadratic equation in disguise. That is, we can rewrite the free energy in the form of <span class="math notranslate nohighlight">\(A_1(\eta^2+A_2)^2\)</span>. If <span class="math notranslate nohighlight">\(A_2&gt;0\)</span>, the free energy is minimized when <span class="math notranslate nohighlight">\(\eta^2=\eta=0\)</span>. If <span class="math notranslate nohighlight">\(A_2&lt;0\)</span>, the free energy is minimized when <span class="math notranslate nohighlight">\(\eta^2=-A_2&gt;0\)</span>. Therefore, we can reverse engineer the properties we want. That is, we require <span class="math notranslate nohighlight">\(a_2(J,T)\)</span> to change sign accordingly at <span class="math notranslate nohighlight">\(T=T_c\)</span>!</p>
 </section>
 <section id="the-critical-exponents">
 <h4>The critical exponents<a class="headerlink" href="#the-critical-exponents" title="Permalink to this headline">#</a></h4>

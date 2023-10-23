@@ -187,7 +187,13 @@ $$
 \text{.}
 $$
 
-Our goal is to have $\eta=0$ to be the stable solution for the Landau free energy when $T>T_c$ and $\eta=\pm\eta_{SB}$ when $T<T_c$. How to achieve our goal? We can make the following observation, the functional form of the Landau free energy is essentially a quadratic equation in disguise. That is, we can rewrite the free energy in the form of $A_1(\eta^2+A_2)^2$. If $A_2>0$, the free energy is minimized when $\eta^2=\eta=0$. If $A_2<0$, the free energy is minimized when $\eta^2=-A_2>0$. Therefore, we can reverse engineer the properties we want. That is, we require $a_2(J,T)$ to change sign accordingly at $T=T_c$!
+Our goal is to have $\eta=0$ to be the stable solution for the Landau free energy when $T>T_c$ and $\eta=\pm\eta_{SB}$ when $T<T_c$. How to achieve our goal? We can make the following observation, the functional form of the Landau free energy is essentially a quadratic equation in disguise. That is, we can rewrite the free energy in the form of $A_1(\eta^2+A_2)^2$. To have a well defined minimum, we need to have $A_1>0$. If $A_2>0$, the free energy is minimized when $\eta^2=\eta=0$. If $A_2<0$, the free energy is minimized when $\eta^2=-A_2>0$. Therefore, we can reverse engineer the properties we want. That is, we require $a_4(J,T)>0$ and $a_2(J,T)$ to change sign accordingly at $T=T_c$! With these information, we could find the leading order behavior of $a_0(J,T),a_2(J,T)$ and $a_4(J,T)$ in temperature.
+
+$$
+a_0(J,T)\simeq a_0(J)+\cdots\\
+a_2(J,T)\simeq a\left(\frac{T-T_c}{T_c}\right)\cdots\\
+a_4(J,T)\simeq a_4(J)+\cdots\text{.}
+$$
 
 #### The critical exponents
 

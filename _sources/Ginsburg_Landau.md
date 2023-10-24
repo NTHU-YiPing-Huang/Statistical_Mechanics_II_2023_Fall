@@ -190,12 +190,74 @@ $$
 Our goal is to have $\eta=0$ to be the stable solution for the Landau free energy when $T>T_c$ and $\eta=\pm\eta_{SB}$ when $T<T_c$. How to achieve our goal? We can make the following observation, the functional form of the Landau free energy is essentially a quadratic equation in disguise. That is, we can rewrite the free energy in the form of $A_1(\eta^2+A_2)^2$. To have a well defined minimum, we need to have $A_1>0$. If $A_2>0$, the free energy is minimized when $\eta^2=\eta=0$. If $A_2<0$, the free energy is minimized when $\eta^2=-A_2>0$. Therefore, we can reverse engineer the properties we want. That is, we require $a_4(J,T)>0$ and $a_2(J,T)$ to change sign accordingly at $T=T_c$! With these information, we could find the leading order behavior of $a_0(J,T),a_2(J,T)$ and $a_4(J,T)$ in temperature.
 
 $$
-a_0(J,T)\simeq a_0(J)+\cdots\\
-a_2(J,T)\simeq a\left(\frac{T-T_c}{T_c}\right)\cdots\\
-a_4(J,T)\simeq a_4(J)+\cdots\text{.}
+a_0(J,T)&\simeq a_0(J)+\cdots\\
+a_2(J,T)&\simeq a\left(\frac{T-T_c}{T_c}\right)+\cdots\equiv at+\cdots\\
+a_4(J,T)&\simeq \frac{b}{2}+\cdots\text{ with $b>0$.}
 $$
 
+The $a_0(J)$ term is not going to play an essential role, so we drop it in later discussion. When we include coupling with external field, the Landau free energy should have the form
+
+$$
+\mathcal{L}=at\eta^2+\frac{b}{2}\eta^4-h\eta\text{.}
+$$
+
+The schematic behavior of the Landau free energy is ploted in {numref}`Landau_free_energy_Ising`.
+
+```{figure} /images/Landau_free_energy_simple.pdf
+---
+width: 950 px
+name: Landau_free_energy_Ising
+---
+Schematic behavior of the Landau free energy for Ising model.
+```
+
 #### The critical exponents
+
+For the corresponding Landau free energy, we can easily derive 
+
+$$
+\eta(t)=
+\left\{
+\begin{array}{cc}
+\sqrt{\frac{-at}{b}}\propto t^{\beta}; \beta=\frac{1}{2} &\text{when $t<0$,h=0}\\
+0 &\text{when $t>0$,h=0}
+\end{array}
+\right.
+\text{.}
+$$
+
+Using this informaiton, we can derive $\mathcal{L}(\eta=0)$ and $\mathcal{L}{\eta=\sqrt{\frac{-at}{b}}}$ and calculate the corresponding specific heat near $T_c$. We find there is a jump. So the critical exponent is $\alpha=0$.
+
+$$
+C_v=T^2\frac{\partial^2 \mathcal{L}}{\partial T^2}=
+\left\{
+\begin{array}{cc}
+0 &t>0\\
+\frac{a^2}{b T_c} &t\lesssim 0
+\end{array}
+\right.
+\text{.}
+$$
+
+When $t=0$ and $h\neq0$, we have
+
+$$
+(\cdots)\frac{b}{2}\eta^3=h, h\propto \eta^{\delta}; \delta=3\text{.}
+$$
+
+For the susceptibility, we have
+
+$$
+\chi_T=\left.\frac{\partial \eta(h)}{\partial h}\right|_T\sim
+\left\{
+\begin{array}{cc}
+\frac{1}{at} \sim t^{-\gamma^+} &t>0,\eta=0
+\frac{1}{-4at} \sim t^{-\gamma^-} &t<0,\eta=\sqrt{\frac{-at}{b}}
+\end{array}
+\right.
+$$
+
+with $\gamma^+=\gamma^-=1$.
 
 #### Effects of external fields
 

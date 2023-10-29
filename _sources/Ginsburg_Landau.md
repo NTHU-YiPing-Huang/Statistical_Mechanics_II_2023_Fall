@@ -211,6 +211,9 @@ name: Landau_free_energy_Ising
 Schematic behavior of the Landau free energy for Ising model.
 ```
 
+When $h=0$, the system has the Ising symmetry and the symmetry is spontaneously broken at the continuous phase transition point.
+When $t<0$ and we tune the external field from postive value to negative value, we have a jump of the order parameter at $h=0$. We have a discontinuous phase transition at $h=0$.
+
 #### The critical exponents
 
 For the corresponding Landau free energy, we can easily derive 
@@ -259,10 +262,116 @@ $$
 
 with $\gamma^+=\gamma^-=1$.
 
-#### Effects of external fields
+#### Effects of higher order terms
 
-## The microscopic meaning of the "Landau free energy"
+Once we include the external field that breaks the symmetry, we should allow terms with odd power of $\eta$. In the previous discussion, we found the linear term will tilt the free energy landscape and demonstrate the discontinuous transition across $h=0$. However, in the simple free energy expression, we found there will be no discontinuous phase transition when we tune the temperature! It is actually an artifact of the simple free energy structure. It does not mean the Landau theory cannot capture finite temperature discontinuous phase transition. Now we would like to understand what happend if we include higher order terms of $\eta$. Will that give us some understanding about the discontinuous phase transition at finite temperature?
+
+Let's consider the term proportional with $\eta^3$. The corresponding free energy looks like
+
+$$
+\mathcal{L}=at\eta^2+\frac{b}{2}\eta^4-h\eta+C\eta^3\text{.}
+$$
+
+As before, we would like to identify the configuration that minimize the Landau free energy.
+
+$$
+\frac{\partial \mathcal{L}}{\partial \eta}=0=2at\eta+2b\eta^3-h+3C\eta^2\text{.}
+$$
+
+We roughly know the effect of the linear term. So let's set $h=0$ and focus on the effect of the $\eta^3$ term. At the $h=0$ point, we have
+
+$$
+\eta=
+\left\{
+\begin{array}{c}
+0\\
+-\frac{3C}{4b}\pm\sqrt{\left(\frac{3C}{4b}\right)^2-\frac{at}{b}}\equiv \eta_{\pm}
+\end{array}
+\right.
+\text{.}
+$$
+To get real $\eta_{\pm}$, we require
+
+$$
+\left(\frac{3C}{4b}\right)^2-\frac{at}{b}\ge0\text{.}
+$$
+
+That sets a range of the temperture given by the temperature scale $t^*$. $\eta$ is real if
+
+$$
+t<t^*\equiv \frac{b}{a}\left(\frac{3C}{4b}\right)^2 \text{.}
+$$
+
+That is, only below this temperature, we could have non-trivial local extrema for $\eta=\eta_{\pm}$. Otherwise, the only local extrema is the minuma at $\eta=0$.
+
+When we are below the temperature scale $t^*$, the two minimum will compete with each other. The critical temperature, $t_1$, that the two minimum switch roles, is the point where the discontinuous phase transition happened.
+
+## The Landau free energy with inhomogeneous order parameter field
+
+The whole discussion till now focus on the homogeneous case where $\nabla \eta(\boldsymbol{r})=0$. If the order parameter field is "piecewise flat", we can simply add the contribution of the Landau free energy for each position with a local homogeneous order parameter field. So the challenge to go from homogeneous one to the inhomogeneous one is how to deal with the situation when the order parameter changes as a function of space. That is the point where $\nabla \eta(\boldsymbol{r})$ kicks in. In principle we could have very complicate order parameter field, but let's assume we would like to focus on the case that the order parameter field varies smoothly on the scale that we care about. What that means is we don't want to have the field configuration with large $\nabla \eta(\boldsymbol{r})$ value, a simple way to supress such configuration is to give it a free energy penalty. So our Landau free enegy will look like
+
+$$
+L=\int d^d\boldsymbol{r}\frac{\gamma}{2}\left(\nabla \eta(\boldsymbol{r})\right)^2 +\mathcal{L}_0(\eta(\boldsymbol{r}))\equiv \int d^d\boldsymbol{r}\mathcal{L}^{(g)}\text{.}
+$$
+
+Here, $\mathcal{L}^{(g)}$ represent the generalized Landau free energy density. Phenomenological wise, we know that $\gamma$ is related to how difficult it is to modify the order parameter field. When the coupling is stronger, or the range of the interaction, $R$, is larger, the order parameter gets stiffer. From the dimension analysis, we should know $\gamma\propto J\frac{R^2}{a^d}$.
 
 ## The functional integral representation of Landau theory
 
-microscopic meaning of each parameter
+Next, we are going to introduce the functional integral representation of Landau theory. We would like to deform the problem form discription using discrete variables to using continuous function. Essentially, the observable defined on the lattice is now promoted into a field. The techniques that are developed to analyse field like this is part of the big research subject of field theory. Formulating statistical mechanics problem into field theory is sometimes known as "statistical field theory". One of the first step to describe Landau theory in the statistical field theory framework is the coarse graining process that we would like to discuss first.
+
+### Coarse graining
+
+In the Ising model, we use binary variables to describe the configurations. Consider a random configuration on a two-dimensional lattice, schematically it looks like {numref}`random_Ising`.
+
+```{figure} /images/random_conf.pdf
+---
+width: 950 px
+name: random_Ising
+---
+A random configuration of binary variables on a two-dimensional lattice.
+```
+
+The {numref}`random_Ising` contains the full information about the configuration. However, it is also difficult to work in this representation since everything is discrete and we cannot apply the approximations that we are familiar with in the continuous description (e.g. No Taylor expansion). Can we have some approximate version of {numref}`random_Ising` but that is smooth enough for us to develop continuous description on top of that? The coarse graining process essentially is designed for that. If we replace the exact binary configurations within a length scale using the average value within the length scale, the average values will vary slower on the space. For example, if we took {numref}`random_Ising` and average over a $5\times 5$ block and define a new variable at the center of such block, the new configuration looks like {numref}`random_Ising_cg_l_5`.
+
+```{figure} /images/random_conf_cg_1_l_5.pdf
+---
+width: 520 px
+name: random_Ising_cg_l_5
+---
+A random configuration of binary variables on a two-dimensional lattice after we coarse grain on a $5\times 5$ block. Blue/Red regions are the regions below/above the average value of $0.5$
+```
+
+Now we can see the variation in space is reduced (at least not of $O(1)$). But still, it is not as smooth as we considered as continuous in space.
+
+We can perform the coarse graining on a bigger block, say $15\times 15$, it looks like {numref}`random_Ising_cg_l_15`. 
+
+```{figure} /images/random_conf_cg_1_l_15.pdf
+---
+width: 520 px
+name: random_Ising_cg_l_15
+---
+A random configuration of binary variables on a two-dimensional lattice after we coarse grain on a $15\times 15$ block.
+```
+
+We can also coarse grain the coarse grained ones, it looks like {numref}`random_Ising_cg_6_l_5` after we iteratively coarse grain the configuration on $5\times 5$ blocks six times.
+
+```{figure} /images/random_conf_cg_6_l_5.pdf
+---
+width: 520 px
+name: random_Ising_cg_6_l_5
+---
+A random configuration of binary variables on a two-dimensional lattice after we coarse grain on a $5\times 5$ block iteratively 6 times.
+```
+
+The point is, we loose some information after coarse graining, but the corresponding configuration looks smoother (comparing {numref}`random_Ising`, {numref}`random_Ising_cg_l_15` and {numref}`random_Ising_cg_6_l_5`). So it makes more sense for us to use a continuous function to describe the coarse grained configuration and develop the corresponding field theory.
+
+But we should also be careful about what have been dropped. After some thinking, we know the size of the block for coarse graining is important.  After we average the spin configurations within that block, the detailed informaiton inside that block is sacrificed. So we need to choose the length scale for the coarse grainning blocks wisely such that we can still access the relevant information of our original problem.
+
+On the otherhand, we cannot coarse grain our system too little such that the field description does not make sense. If we use $\Lambda^{-1}$ to represent the length scale of the coarse graining, we would like to have the following relation.
+
+$$
+a\ll \Lambda^{-1}\lesssim \xi(t)
+$$
+
+

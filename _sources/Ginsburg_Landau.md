@@ -311,14 +311,14 @@ When we are below the temperature scale $t^*$, the two minimum will compete with
 The whole discussion till now focus on the homogeneous case where $\nabla \eta(\boldsymbol{r})=0$. If the order parameter field is "piecewise flat", we can simply add the contribution of the Landau free energy for each position with a local homogeneous order parameter field. So the challenge to go from homogeneous one to the inhomogeneous one is how to deal with the situation when the order parameter changes as a function of space. That is the point where $\nabla \eta(\boldsymbol{r})$ kicks in. In principle we could have very complicate order parameter field, but let's assume we would like to focus on the case that the order parameter field varies smoothly on the scale that we care about. What that means is we don't want to have the field configuration with large $\nabla \eta(\boldsymbol{r})$ value, a simple way to supress such configuration is to give it a free energy penalty. So our Landau free enegy will look like
 
 $$
-L=\int d^d\boldsymbol{r}\frac{\gamma}{2}\left(\nabla \eta(\boldsymbol{r})\right)^2 +\mathcal{L}_0(\eta(\boldsymbol{r}))\equiv \int d^d\boldsymbol{r}\mathcal{L}^{(g)}\text{.}
+L\left[\eta(\boldsymbol{r})\right]=\int d^d\boldsymbol{r}\frac{\gamma}{2}\left(\nabla \eta(\boldsymbol{r})\right)^2 +\mathcal{L}_0\left[\eta(\boldsymbol{r})\right]\equiv \int d^d\boldsymbol{r}\mathcal{L}^{(g)}\left[\eta(\boldsymbol{r})\right]\text{.}
 $$
 
 Here, $\mathcal{L}^{(g)}$ represent the generalized Landau free energy density. Phenomenological wise, we know that $\gamma$ is related to how difficult it is to modify the order parameter field. When the coupling is stronger, or the range of the interaction, $R$, is larger, the order parameter gets stiffer. From the dimension analysis, we should know $\gamma\propto J\frac{R^2}{a^d}$.
 
 ## The functional integral representation of Landau theory
 
-Next, we are going to introduce the functional integral representation of Landau theory. We would like to deform the problem form discription using discrete variables to using continuous function. Essentially, the observable defined on the lattice is now promoted into a field. The techniques that are developed to analyse field like this is part of the big research subject of field theory. Formulating statistical mechanics problem into field theory is sometimes known as "statistical field theory". One of the first step to describe Landau theory in the statistical field theory framework is the coarse graining process that we would like to discuss first.
+Next, we are going to introduce the functional integral representation of Landau theory. In the above phenomenological description, we should notice that the introduction of the $\frac{\gamma}{2}\left(\nabla \eta(\boldsymbol{r})\right)^2$ term introduces a length scale to the problem. It will become clear that the length scale is the correlation length, $\xi$. On the other hand, the microscopic model has an intrinsic length scale given by the lattice constant $a$. The differentiation cannot be well defined at the length scale of $\mathcal{O}(a)$. So we should be more careful about the description. Especially in this description, all the observable defined on the lattice is now promoted into a field. The techniques that are developed to analyse field like this is part of the big research subject of field theory. Formulating statistical mechanics problem into field theory is sometimes known as "statistical field theory". One of the first step to describe Landau theory in the statistical field theory framework is the coarse graining process. What exactly do we mean by $\eta(\boldsymbol{r})$?
 
 ### Coarse graining
 
@@ -374,4 +374,81 @@ $$
 a\ll \Lambda^{-1}\lesssim \xi(t)
 $$
 
+Here $\Lambda^{-1}$ is the inverse of the wave vector cutoff which will be convenient for our later discussion. The coarse grained field is constructed by
 
+$$
+m_{\Lambda}(\boldsymbol{r})\equiv \frac{1}{N_{\Lambda}(\boldsymbol{r})} \sum_{i\in \mathcal{B}(\boldsymbol{r},\Lambda)} \langle \sigma_i\rangle\text{.}
+$$
+Now, we would like to discuss the theory of $m_{\Lambda}(\boldsymbol{r})$.
+
+### The functional integral form of the Landau free energy and functional derivatives
+
+More specifically, the previous expression of the Landau free energy should be understood with the coarse grained length scale $\Lambda^{-1}$ and the corresponding Landau free energy can be expressed as
+
+$$
+L\left[m_{\Lambda}(\boldsymbol{r})\right]&=\int d^d\boldsymbol{r}\left\{\mathcal{L}\left[m_{\Lambda}(\boldsymbol{r})\right]+\frac{\gamma}{2}\left(\nabla m_{\Lambda}(\boldsymbol{r})\right)^2\right\}\\
+&\equiv\int d^d\boldsymbol{r}\mathcal{L}^{(g)}\left[m_{\Lambda}(\boldsymbol{r})\right]
+$$
+
+where the dependence on the coarse graining process is shown explicitly. 
+
+The microscopic partition function can be formally related to the Landau free energy through the coarse grain process as
+
+$$
+Z&=\sum_{ \left\{\sigma_i\right\}}e^{-\beta H(\left\{\sigma_i\right\})}=\sum_{j}\sum_{m_{\Lambda}(\boldsymbol{x}_j)}\sum_{ \left\{\sigma_i\right\}}\delta_{m_{\Lambda}(\boldsymbol{x}_j)N_{\Lambda}(\boldsymbol{x}_j), \sum_{i\in\mathcal{B}(\boldsymbol{x}_j,\Lambda)}\sigma_i}e^{-\beta H(\left\{\sigma_i\right\})}\\
+&\xrightarrow{\text{continuous limit}} \int \mathcal{D}\left[m_{\Lambda}(\boldsymbol{r})\right] e^{-\beta \int d^d\boldsymbol{r} \mathcal{L}^{(g)}\left[m_{\Lambda}(\boldsymbol{r})\right]}
+$$
+
+Keep writing the dependence on $\Lambda$ make the expression lengthy. So we usually supress the $\Lambda$ dependence but we should always remember the existence of the coarse grain length scale in our expression.
+
+What do we mean by the continuous limit? We take $a\to0$ but we want to keep the physical volume to be invariant, that is $V=N(\Omega)a^d$ is kept fixed as we send $a\to0$. The formal expression $\int \mathcal{D}\left[m_{\Lambda}(\boldsymbol{r})\right]$ can therefore beening understood as
+
+$$
+\int \mathcal{D}\left[\eta(\boldsymbol{r})\right]\equiv \lim_{a\to0 , N(\Omega)\to\infty \atop V\to const} \int d{\eta_1}\int d{\eta_2}\cdots \int d{\eta_{N(\Omega)}}\equiv Tr_{ \eta(\boldsymbol{r})}
+\text{.}
+$$
+
+Here, we use $\eta(\boldsymbol{r})$ to restore the generality of the theory.
+Usually, we would like to work in the momentum space. For real $\eta(\boldsymbol{r})$, the Fourier components are not independent, therefore, we have 
+
+$$
+Tr_{ \eta(\boldsymbol{r})}=\int \prod_{\boldsymbol{k}<\Lambda\atop k_z>0} d(Re[\eta_{\boldsymbol{k}}]) d(Im[\eta_{\boldsymbol{k}}])\text{.}
+$$
+
+The $k_z>0$ take care of the double counting issue of the constraint due to the realness of the order parameter field. The $\boldsymbol{k}<\Lambda$ is to remind us that the validity of the field theory is based on a valid coarse grain process.
+
+Now we would like to do some calculation using the functional integral representation of the Landau free energy. It is useful to know how to make the corresponding generalization by consulting the discrete version of the problem.
+
+$$
+Z_D[\left\{h_i\right\}]\leftrightarrow Z_C[h(\boldsymbol{r})]\text{.}
+$$
+
+Here
+
+$$
+Z_D[\left\{h_i\right\}]=Tr_{ \left\{\eta_i\right\}}\left\{\exp\left[-\beta(H_{\Omega}-\sum_i h_i\eta_i)\right]\right\}
+$$
+
+with the lattice Hamiltonian $H_{\Omega}$.
+
+$$
+Z_C[h(\boldsymbol{r})]=Tr_{ \eta(\boldsymbol{r})}\left\{\exp\left[-\beta\int d^d\boldsymbol{r} \left\{\mathcal{H}_{\Omega}-h(\boldsymbol{r})\eta(\boldsymbol{r})\right\}\right]\right\}
+$$
+
+with the Hamiltonian density $\mathcal{H}_{\Omega}$.
+
+The corresponding correlators can be constructed as
+
+$$
+\langle \eta_i\eta_j\rangle_D&= \beta^{-2}Z_D[\left\{h_l\right\}]^{-1} \frac{\partial}{\partial h_i}\frac{\partial}{\partial h_j}Z_D[\left\{h_l\right\}]\\
+\langle \eta(\boldsymbol{r}_i)\eta(\boldsymbol{r}_j)\rangle_C&=\beta^{-2}Z_C[h(\boldsymbol{r})]^{-1} \frac{\delta }{\delta h(\boldsymbol{r}_i)}\frac{\delta }{\delta h(\boldsymbol{r}_j)}Z_C[h(\boldsymbol{r})]\text{.}
+$$
+
+Here, we introduce the notion of functional derivative which means the notion of differential is now extended to the functional space. A function $f$ is a mapping of a vector $\boldsymbol{r}$ to a value $f(\boldsymbol{r})$. A functional $F$ is a mapping of a function $f(\boldsymbol{r})$ to a value of $F[f(\boldsymbol{r})]$. 
+
+We can therefore again make the correspondence explicit
+
+$$
+\frac{\partial}{\partial x}&\equiv \lim_{\epsilon\to0} \frac{1}{\epsilon} \left[f(x+\epsilon)-f(x)\right]\\
+\frac{\delta}{\delta \eta(\boldsymbol{x}')}&\equiv \lim_{\epsilon\to0}\frac{1}{\epsilon}\left\{F[\eta(\boldsymbol{x})+\epsilon\delta(\boldsymbol{x}'-\boldsymbol{x})]-F[\eta(\boldsymbol{x})]\right\}\text{.}
+$$

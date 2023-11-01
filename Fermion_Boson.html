@@ -1,44 +1,35 @@
 
-
 <!DOCTYPE html>
 
-
-<html >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Hilbert space and Hamiltonian &#8212; Statistical Mechanics (II)</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    <title>The Hilbert space and Hamiltonian &#8212; Statistical Mechanics (II)</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -46,12 +37,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -61,91 +52,59 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Fermion_Boson';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="syllabus.html">
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistical Mechanics (II)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -155,232 +114,332 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview of the course</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ginsburg_Landau.html">The Ginsburg Landau theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="biblio.html">Epilogue</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Overview of the course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ginsburg_Landau.html">
+   The Ginsburg Landau theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="biblio.html">
+   Epilogue
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
   
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
     </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FFermion_Boson.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/Fermion_Boson.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
+    <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Hilbert space and Hamiltonian</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The Hilbert space and Hamiltonian</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fermions-or-bosons-from-two-particle-systems">Fermions or bosons? From two particle systems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-many-body-system-non-interacting-limit">Quantum many-body system (non-interacting limit)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hilbert-space">The Hilbert space</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-many-body-hamiltonian">The many-body Hamiltonian</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function-for-free-fermions-and-bosons">Partition function for free fermions and bosons</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-limit-of-the-quantum-gases">Classical limit of the quantum gases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerate-fermi-gases">Degenerate Fermi gases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerated-bose-gases">Degenerated Bose gases</a></li>
-</ul>
-</li>
-</ul>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
 
-            </nav>
-        </div>
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FFermion_Boson.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Fermion_Boson.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   The Hilbert space and Hamiltonian
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fermions-or-bosons-from-two-particle-systems">
+     Fermions or bosons? From two particle systems
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantum-many-body-system-non-interacting-limit">
+     Quantum many-body system (non-interacting limit)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-hilbert-space">
+       The Hilbert space
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-many-body-hamiltonian">
+       The many-body Hamiltonian
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partition-function-for-free-fermions-and-bosons">
+   Partition function for free fermions and bosons
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classical-limit-of-the-quantum-gases">
+     Classical limit of the quantum gases
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#degenerate-fermi-gases">
+     Degenerate Fermi gases
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#degenerated-bose-gases">
+     Degenerated Bose gases
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Hilbert space and Hamiltonian</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   The Hilbert space and Hamiltonian
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fermions-or-bosons-from-two-particle-systems">
+     Fermions or bosons? From two particle systems
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantum-many-body-system-non-interacting-limit">
+     Quantum many-body system (non-interacting limit)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-hilbert-space">
+       The Hilbert space
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-many-body-hamiltonian">
+       The many-body Hamiltonian
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partition-function-for-free-fermions-and-bosons">
+   Partition function for free fermions and bosons
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classical-limit-of-the-quantum-gases">
+     Classical limit of the quantum gases
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#degenerate-fermi-gases">
+     Degenerate Fermi gases
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#degenerated-bose-gases">
+     Degenerated Bose gases
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-hilbert-space-and-hamiltonian">
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="the-hilbert-space-and-hamiltonian">
 <h1>The Hilbert space and Hamiltonian<a class="headerlink" href="#the-hilbert-space-and-hamiltonian" title="Permalink to this headline">#</a></h1>
-<div class="section" id="fermions-or-bosons-from-two-particle-systems">
+<section id="fermions-or-bosons-from-two-particle-systems">
 <h2>Fermions or bosons? From two particle systems<a class="headerlink" href="#fermions-or-bosons-from-two-particle-systems" title="Permalink to this headline">#</a></h2>
 <p>The most important difference between a classical and a quantum system is now the status of the system is described by a wave function. What qualitative new structure will be given by this difference? The wave function description will lead to a striking effect when we consider the many-particle systems since we loose the ability to distinguish identical particles by their “path”.</p>
 <p>Identical particles are the particles with identical intrinsic properties such as mass, charge, spin, <em>etc.</em>. For classical systems, we can always use the path to track individual particles in principle. However, this becomes impossible when the wave functions between two particles has overlap with each other. The difficulty came from the uncertainty of the positions of those particles.</p>
@@ -397,11 +456,11 @@ document.write(`
 <p class="admonition-title">What?</p>
 <p>It seems above argument is quite general. However, something sutble will happen in two-dimensional space. There, the swapping operation is not so trivial. Therefore, a different quantum statistical behavior other than fermion or boson is possible. Such a particle is called ‘anyon’. One of the simplest model demonstrate anyon physics is the <a class="reference external" href="https://topocondmat.org/index.html">toric code model</a>. Anyons could be used in quantum computation and therefore has attract lots of attention recently. Some recent breakthrough on related subjects including <span id="id1">[]</span> and <span id="id2">[]</span>.</p>
 </div>
-</div>
-<div class="section" id="quantum-many-body-system-non-interacting-limit">
+</section>
+<section id="quantum-many-body-system-non-interacting-limit">
 <h2>Quantum many-body system (non-interacting limit)<a class="headerlink" href="#quantum-many-body-system-non-interacting-limit" title="Permalink to this headline">#</a></h2>
 <p>Now we know we have Fermions and Bosons. How to describe such a quantum system? To define a quantum system, we need to specify the Hamiltonian, <span class="math notranslate nohighlight">\(H\)</span>, and the corresponding Hilbert space,<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>. Here, I will give a quick overview of the general description of quantum many-body systems with <span class="math notranslate nohighlight">\(N\)</span> particles.</p>
-<div class="section" id="the-hilbert-space">
+<section id="the-hilbert-space">
 <h3>The Hilbert space<a class="headerlink" href="#the-hilbert-space" title="Permalink to this headline">#</a></h3>
 <p>Let’s consider the wave function of distinguishable many-body system first. Since the particles are distinguishable, we can label the Hilbert space accordingly. The total Hilbert space is</p>
 <div class="math notranslate nohighlight">
@@ -435,8 +494,8 @@ P_{S/AS}\left[ \vert \phi_{\gamma_1}\rangle_1 \otimes\vert \phi_{\gamma_2}\rangl
 <p>Here, <span class="math notranslate nohighlight">\(\eta=\pm1\)</span> for symmetric or anti-symmetric summation, <span class="math notranslate nohighlight">\(p\)</span> is an element of the <span class="math notranslate nohighlight">\(N\)</span> object permutation. <span class="math notranslate nohighlight">\(p(j)\)</span> is the <span class="math notranslate nohighlight">\(j\)</span>-th object of this permutation. <span class="math notranslate nohighlight">\(\overline{p}\)</span> represent an integer which is the number required to swap nearby elements in the permutation <span class="math notranslate nohighlight">\(p\)</span> such that it gets back to an ordered permutation. For example, for a 3 object permutation <span class="math notranslate nohighlight">\(p=[231]\)</span>, <span class="math notranslate nohighlight">\(\overline{p}=2\)</span> since we need to swap 31 then swap 21 to get to the permutation <span class="math notranslate nohighlight">\([123]\)</span>.  The summation contains <span class="math notranslate nohighlight">\(N!\)</span> terms. That’s why the normalization factor is <span class="math notranslate nohighlight">\(\sqrt{N!}^{-1}\)</span>.</p>
 <p>From this construction, we can also see the Pauli exclusion principle. When <span class="math notranslate nohighlight">\(\gamma_i=\gamma_j\)</span>, the pairs of permutations related by a swap between <span class="math notranslate nohighlight">\(p(i)\)</span> and <span class="math notranslate nohighlight">\(p(j)\)</span> will differ by a minus sign. All such pairs therefore cancels with each other and leads to the Pauli exclusion principle.</p>
 <p>We start from something simple and derive the generalized form for the many-body wave function when the indistinguishable nature of quantum particles are considered.</p>
-</div>
-<div class="section" id="the-many-body-hamiltonian">
+</section>
+<section id="the-many-body-hamiltonian">
 <h3>The many-body Hamiltonian<a class="headerlink" href="#the-many-body-hamiltonian" title="Permalink to this headline">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
@@ -450,10 +509,10 @@ H_i=\textbf{1}_1\otimes\textbf{1}_2\otimes\cdots\textbf{1}_{i-1}\otimes H_i\otim
 \]</div>
 <p>That is, the operator <span class="math notranslate nohighlight">\(H_i\)</span> only acts non-trivially on the Hilbert space of the <span class="math notranslate nohighlight">\(i\)</span>-th particle.</p>
 <p>Suppose the kets <span class="math notranslate nohighlight">\(\vert \phi_{\gamma'}\rangle_j\)</span> are the eigenstates of the Hamiltonian <span class="math notranslate nohighlight">\(H_j\)</span>, <em>i.e.</em> <span class="math notranslate nohighlight">\(H_j|\phi_{\gamma'}\rangle_j=E_{\gamma'}|\phi_{\gamma'}\rangle_j\)</span>. The corresponding eigenstates with many-body energy <span class="math notranslate nohighlight">\(E_{\gamma}\)</span> is <span class="math notranslate nohighlight">\(H\vert \phi ^{B/F}_N\rangle=\left(\sum_j E_{\gamma_j}\right) \vert \phi^{B/F}_N\rangle=E_{\gamma}\vert \phi^{B/F}_N\rangle\)</span>. The big difference of boson and fermion is the Pauli exclusion principle, we can have all the bosons sitting on the same state to lower the total energy; for fermions, they need to be stacked one by one. That corresponds to the two very important concepts, the Bose-Einstein condensation and the concept of fermi sea.</p>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="partition-function-for-free-fermions-and-bosons">
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="partition-function-for-free-fermions-and-bosons">
 <h1>Partition function for free fermions and bosons<a class="headerlink" href="#partition-function-for-free-fermions-and-bosons" title="Permalink to this headline">#</a></h1>
 <p>In principle, the <span class="math notranslate nohighlight">\(\gamma_j\)</span> in the above expression of the many-body wave function can be any quantum number. For example, for a free particle, <span class="math notranslate nohighlight">\(\gamma_j\)</span> can be the index of momentum <span class="math notranslate nohighlight">\(p_j\)</span>. We can describe our system as the <span class="math notranslate nohighlight">\(j\)</span>-th particle has momentum <span class="math notranslate nohighlight">\(p_j\)</span> then symmetrize/anti-symmetrize the whole wave function as we did currently. However, one can also use another representation to describe the state. That is, we know don’t have the concept of <span class="math notranslate nohighlight">\(j\)</span>-th particle, maybe we can just count how many particles have a specific momentum <span class="math notranslate nohighlight">\(p_a\)</span>. Then, we can describe our system using those numbers <span class="math notranslate nohighlight">\(\{n_{p_1},n_{p_2},\cdots, n_{p_a},\cdots\}\)</span>. If we did so for our <span class="math notranslate nohighlight">\(N\)</span> particle system, the representation must satisfy the constraint that <span class="math notranslate nohighlight">\(\sum_a n_{p_a}=N\)</span>. Here, we use <span class="math notranslate nohighlight">\(a\)</span>, which is the index for the quantum number (momentum in this case), as a distinct label with the index of the particle <span class="math notranslate nohighlight">\(j\)</span>.</p>
 <p>Let’s start from here to construct the canonical ensemble of quantum gases with internal degree of freedom <span class="math notranslate nohighlight">\(\alpha\)</span> using the occupation number representation.</p>
@@ -536,7 +595,7 @@ Z_{GC}=\sum_{N=0}^\infty Z_N e^{\beta \mu N}=\sum_{\alpha}\sum_{\{n_{\textbf{p}_
 \langle \hat{N}\rangle=N= z\frac{\partial }{\partial z}\ln Z_{GC}= \eta (2S+1) \left(\frac{L}{\lambda}\right)^3 \phi_{\frac{3}{2}}(\eta z)\text{.}
 \]</div>
 <p>Here we use the relation <span class="math notranslate nohighlight">\(z\frac{\partial}{\partial z} \phi_{\alpha}(cz)=\phi_{\alpha-1}(cz)\)</span>.</p>
-<div class="section" id="classical-limit-of-the-quantum-gases">
+<section id="classical-limit-of-the-quantum-gases">
 <h2>Classical limit of the quantum gases<a class="headerlink" href="#classical-limit-of-the-quantum-gases" title="Permalink to this headline">#</a></h2>
 <p>When <span class="math notranslate nohighlight">\(z\ll 1\)</span>, we can approximate <span class="math notranslate nohighlight">\(\phi_{\alpha}(\eta z)\sim \eta z\)</span>. In that limit, we can solve <span class="math notranslate nohighlight">\(z\)</span> as a function of <span class="math notranslate nohighlight">\(N\)</span>. We have</p>
 <div class="math notranslate nohighlight">
@@ -546,8 +605,8 @@ z\approx \frac{1}{2S+1}\frac{N\lambda^3}{L^3}\equiv \frac{1}{2S+1} \xi\text{.}
 <p>Here <span class="math notranslate nohighlight">\(\xi=\frac{\lambda^3}{L^3/N}\)</span> is dimensionless parameter which is the ratio between the de Broglie’s thermal volume and the average volume occupied by a particle.</p>
 <p>Here is a self-consistency check, we assume <span class="math notranslate nohighlight">\(z\ll1\)</span> to simplify the relation of <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(z\)</span>. This leads to an expression of <span class="math notranslate nohighlight">\(z\)</span> as a function of <span class="math notranslate nohighlight">\(\xi\)</span>. In this limit, we can also see that <span class="math notranslate nohighlight">\(\ln Z_{GC}\approx N=\frac{pV}{k_BT}\)</span> is the classical equation of state. And we know at the classical limit corresponds to the <span class="math notranslate nohighlight">\(\xi\ll1\)</span> limit. So <span class="math notranslate nohighlight">\(z\)</span> which is proportional with <span class="math notranslate nohighlight">\(\xi\)</span> is indeed a small quantity. So we finish the loop of internal consistency.</p>
 <p>This derivation suggest that we can use <span class="math notranslate nohighlight">\(\xi\)</span> to tell whether we are in the <em>quantum degenerate</em> region which means we need to consider the quantum statistics of our system. If <span class="math notranslate nohighlight">\(\xi\ll1\)</span>, we expect the quantum statistics can be neglected and we reach the classical limit. When <span class="math notranslate nohighlight">\(\xi\sim \mathcal{O}(1)\)</span>, we consider the system to be quantum degenerate.</p>
-</div>
-<div class="section" id="degenerate-fermi-gases">
+</section>
+<section id="degenerate-fermi-gases">
 <h2>Degenerate Fermi gases<a class="headerlink" href="#degenerate-fermi-gases" title="Permalink to this headline">#</a></h2>
 <p>Now let’s think about the quantum limit and if the system is formed by fermions. As we have discussed, the Pauli exclusion principle will play an important role for the statistical behavior of the system. Let’s take the Fermi-Dirac distribution function and think about the meaning of this result. When <span class="math notranslate nohighlight">\(\eta=-1\)</span>, we have</p>
 <div class="math notranslate nohighlight">
@@ -570,8 +629,8 @@ N=V\int_0^{\mu(T=0)=E_F} dE g(E)
 <p>One important behavior of the Fermi-Dirac distribution function is the linear temperature dependence of the low energy specific heat. This behavior is quite general and can be considered via the following argument.</p>
 <p>The specific heat is related to the change of energy <span class="math notranslate nohighlight">\(\Delta E\)</span> when the temperature is changed. Because most of the states at low energy is occupied, therefore, they will not contribute to the change of energy as we smoothly varying the temperature. Therefore, we only care about the states near the fermi energy. At temperature <span class="math notranslate nohighlight">\(T\)</span> only states within the energy window <span class="math notranslate nohighlight">\(\Delta E\approx k_BT\)</span> will be the active states. The number of such state is <span class="math notranslate nohighlight">\(D(E_F)\Delta E= D(E_F)k_BT\)</span>. Since the particle number is fixed, the thermal fluctuation will just drive the fermions from some lower energy state to a higher energy state. The change of energy is of the scale <span class="math notranslate nohighlight">\(k_BT\)</span>. For a system with <span class="math notranslate nohighlight">\(E_F\gg k_BT\)</span>, the energy change can be approximated as <span class="math notranslate nohighlight">\(\delta E=(D(E_F)k_B \delta T)(k_BT)\)</span>. Therefore, we expect <span class="math notranslate nohighlight">\(C=\frac{\delta E}{\delta T}\propto T\)</span>. Therefore, if we observe low temperature specific heat has a linear temperature dependence. It is suggesting the low energy carrier might be fermions forming a fermi sea. And the states near the fermi surface contribute to the energy transport.</p>
 <p>To have a more detailed calculation of electrons in metal. We can apply the <a class="reference external" href="https://en.wikipedia.org/wiki/Sommerfeld_expansion">Sommerfeld expansion</a> to the Fermi-Dirac distribution. I will leave it as an exercise for the readers.</p>
-</div>
-<div class="section" id="degenerated-bose-gases">
+</section>
+<section id="degenerated-bose-gases">
 <h2>Degenerated Bose gases<a class="headerlink" href="#degenerated-bose-gases" title="Permalink to this headline">#</a></h2>
 <p>Let’s focuse on the <span class="math notranslate nohighlight">\(\eta=+1\)</span> case for bosons.</p>
 <div class="math notranslate nohighlight">
@@ -613,8 +672,8 @@ N_{\textbf{p}\neq0}=(2S+1)\left(\frac{L}{\lambda}\right)^D\phi_{D/2}(z)&lt;(2S+1
 \]</div>
 <p>When <span class="math notranslate nohighlight">\(N&lt;N_{\textbf{p}\neq0}^M\)</span>, everything is fine, since we can always find states with <span class="math notranslate nohighlight">\(\textbf{p}\neq0\)</span> to put our bosons and adjust <span class="math notranslate nohighlight">\(z\)</span> accordingly. If we keep adding more bosons to the system at the same temperature then <span class="math notranslate nohighlight">\(z\)</span> starts to increase and approaches 1. At some critical value of particle number, we can no longer put states at <span class="math notranslate nohighlight">\(\textbf{p}\neq0\)</span> since they are “filled”. The only place to put the boson is to put them at <span class="math notranslate nohighlight">\(\textbf{p}=0\)</span>.
 From the Bose-Einstein distribution, we have <span class="math notranslate nohighlight">\(N_0=\frac{1}{z^-1-1}\)</span>. We can find <span class="math notranslate nohighlight">\(z=\frac{N_0}{N_0+1}\)</span>. When the boson is put at <span class="math notranslate nohighlight">\(\textbf{p}=0\)</span>, <span class="math notranslate nohighlight">\(N_0\)</span> increases and <span class="math notranslate nohighlight">\(z\)</span> gets closer to 1. When <span class="math notranslate nohighlight">\(N_0\)</span> is large, we can see <span class="math notranslate nohighlight">\(z\)</span> approaches 1 as <span class="math notranslate nohighlight">\(z\approx 1-N_0^{-1}\)</span>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -628,7 +687,7 @@ From the Bose-Einstein distribution, we have <span class="math notranslate nohig
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -636,102 +695,36 @@ From the Bose-Einstein distribution, we have <span class="math notranslate nohig
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-</div></div>
-  
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
 </div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The Hilbert space and Hamiltonian</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fermions-or-bosons-from-two-particle-systems">Fermions or bosons? From two particle systems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-many-body-system-non-interacting-limit">Quantum many-body system (non-interacting limit)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hilbert-space">The Hilbert space</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-many-body-hamiltonian">The many-body Hamiltonian</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function-for-free-fermions-and-bosons">Partition function for free fermions and bosons</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-limit-of-the-quantum-gases">Classical limit of the quantum gases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerate-fermi-gases">Degenerate Fermi gases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degenerated-bose-gases">Degenerated Bose gases</a></li>
-</ul>
-</li>
-</ul>
-
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Yi-Ping Huang
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  <p class="copyright">
-    
-      © Copyright 2022.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
+            </footer>
+        </div>
     </div>
-  </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Yi-Ping Huang<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>

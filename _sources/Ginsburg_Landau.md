@@ -1,5 +1,6 @@
 # The Ginsburg Landau theory
 
+
 We will introduce the Ginsburg Landau theory which is a theory that describes the definition of phases and the transitions between them. The theory heavily relies on the principle of symmetry which will become more clear as we introduce the postulates and the structure of the theory. Before everything, let's understand what is the problem and what kind of tools we have at hands.
 
 ## Motivation -- Phases and phase transitions
@@ -452,3 +453,8 @@ $$
 \frac{\partial}{\partial x}&\equiv \lim_{\epsilon\to0} \frac{1}{\epsilon} \left[f(x+\epsilon)-f(x)\right]\\
 \frac{\delta}{\delta \eta(\boldsymbol{x}')}&\equiv \lim_{\epsilon\to0}\frac{1}{\epsilon}\left\{F[\eta(\boldsymbol{x})+\epsilon\delta(\boldsymbol{x}'-\boldsymbol{x})]-F[\eta(\boldsymbol{x})]\right\}\text{.}
 $$
+
+Using this definition, we should be able to show
+* $\frac{\delta}{\delta \eta(\boldsymbol{r})}\left[\int d^d\boldsymbol{r}' \eta(\boldsymbol{r}')\right]=1$
+* $\frac{\delta}{\delta \eta(\boldsymbol{r})}\left[\eta(\boldsymbol{r}')\right]=\delta(\boldsymbol{r}-\boldsymbol{r}')$
+* $\frac{\delta}{\delta \eta(\boldsymbol{r})}\left[\int d^d\boldsymbol{r}' \frac{1}{2}\left[\nabla \eta(\boldsymbol{r}')\right]^2\right]=-\nabla^2 \eta(\boldsymbol{r})$

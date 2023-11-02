@@ -6,6 +6,7 @@
 * Time: Thursday 13:20-16:20
 * Classroom: Physics building, Room 208 
 * Instructor: Yi-Ping Huang
+* TA: Shih-Hsuan Lin, Room 708
 * Office hours: After the course or by appointment (Online or at Room 517)
 * **Final project presentation date: 12/28 and 01/04**
 * The course will be offered in English.

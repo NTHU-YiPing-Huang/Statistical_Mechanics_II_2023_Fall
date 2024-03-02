@@ -42,7 +42,7 @@ $$
 
 Adjusting temperature changes the weighting of $\langle H\rangle$ and $T \langle \left(-\partial_T F\right)_N\rangle$.  At low temperature limit, the first term dominates. At the high temperature limit, the latter dominates.
 
-## Mean-field theory for Ising model
+### Mean-field theory for Ising model
 
 To have a more specific picture about the above abstract idea. Let's take the simplest non-trivial model for the study of phases-- the ferromagnetic Ising model.
 
@@ -74,15 +74,16 @@ $$
 \langle \sigma_i\rangle_{MFT}=m=\tanh\left[ \beta (h+m k_B T_c)\right]; T_c=\frac{2dJ}{k_B}\text{.}
 $$
 
-Once $m$ is determined, we can construct the effective magnetic field and recover $P_{MFT}(\sigma_i)$. With these information, we can calculate the critical exponents by expanding the self-consistency equation near the critical temperature.
+Once $m$ is determined, we can construct the effective magnetic field and recover $P_{MFT}(\sigma_i)$. With these information, we can calculate the critical exponents by expanding the self-consistency equation near the critical temperature. Can we generalize this process? If yes, what can we learn from the generalization scheme?
 
-## Concept of order parameter
+
+## The "Landau free energy"
+
+### Concept of order parameter
 
 One can immediate notice that $\langle \sigma_i\rangle_{MFT}$ plays an important role in the above approach. It is actually the parameter that specifies the corresponding order. When $\langle \sigma_i\rangle_{MFT}\neq0$, it specifies the system is ordered. However, the quantity is defined within the mean-field theory. Why not promoting this idea to a more general setting beyond the mean-field theory. After all, the mean-field theory is just a theory for us to approximate the $P(\{\sigma_1,\sigma_2,\cdots,\sigma_N\})$.
 
 We can take the idea and define an observable $\mathcal{O}$. When $\langle \mathcal{O}\rangle \neq0$, the probability distribution develop some kind of collective pattern that is specified by $\langle \mathcal{O}\rangle$, so we call it the *order parameter*. The order parameter can be a scalar, a vector, a tensor or even a function. We will focus on the simple case for now. For the Ising model, it is just the magnitude of $m$.
-
-## The "Landau free energy"
 
 ### A little bit of reverse engineering...
 
@@ -458,3 +459,36 @@ Using this definition, we should be able to show
 * $\frac{\delta}{\delta \eta(\boldsymbol{r})}\left[\int d^d\boldsymbol{r}' \eta(\boldsymbol{r}')\right]=1$
 * $\frac{\delta}{\delta \eta(\boldsymbol{r})}\left[\eta(\boldsymbol{r}')\right]=\delta(\boldsymbol{r}-\boldsymbol{r}')$
 * $\frac{\delta}{\delta \eta(\boldsymbol{r})}\left[\int d^d\boldsymbol{r}' \frac{1}{2}\left[\nabla \eta(\boldsymbol{r}')\right]^2\right]=-\nabla^2 \eta(\boldsymbol{r})$
+
+We will leave the proof for the readers and using them for later discussion.
+
+Now we should be able to notice the similarity between the discrete discription and the continuous description. So we expect to have
+
+$$
+\langle \eta(\boldsymbol{r})\rangle&=-\frac{\delta}{\delta h(\boldsymbol{r})} F[\eta(\boldsymbol{r})]\\
+\chi_T(\boldsymbol{r},\boldsymbol{r}')&=\frac{\delta}{\delta h(\boldsymbol{r}')}\langle\eta(\boldsymbol{r})\rangle=-\frac{\delta}{\delta h(\boldsymbol{r}')}\frac{\delta}{\delta h(\boldsymbol{r})} F[\eta(\boldsymbol{r})]\\
+&=\beta\left[\underbrace{\langle\eta(\boldsymbol{r})\eta(\boldsymbol{r}')\rangle-\langle \eta(\boldsymbol{r})\rangle\langle\eta(\boldsymbol{r}')\rangle}_{\text{connected correlation function}}\right]=\beta G(\boldsymbol{r},\boldsymbol{r}')\text{.}
+$$
+
+Now, let's see how to calculate the connected correlation function and the susceptibility from the functional representation of the Landau free energy. We copy the free energy here for our convenience.
+
+$$
+L=\int d^d\boldsymbol{r}\left[\frac{\gamma}{2}(\nabla \eta)^2+at\eta^2+\frac{b}{2}\eta^4-h(\boldsymbol{r})\eta(\boldsymbol{r})\right]\text{.}
+$$
+
+The first step is to find the formal expression of field $\eta^*(\boldsymbol{r})$ such that $\left.\frac{\delta L}{\delta \eta(\boldsymbol{r})}\right|_{\eta(\boldsymbol{r})=\eta^*(\boldsymbol{r})}=0$. The minimization condition gives
+
+$$
+-\gamma \nabla^2\eta^*+2at\eta^*+2b(\eta^*)^3-h(\boldsymbol{r})=0\text{.}
+$$
+
+With this equaiton, we can derive the formal expression of susceptibility by taking functional derivative with respect to $h(\boldsymbol{r}')$ on both side of the above equation.
+
+$$
+\chi_T(\boldsymbol{r},\boldsymbol{r}')&=\frac{\delta}{\delta h(\boldsymbol{r}')}\eta^*(\boldsymbol{r})\\
+\left[-\gamma\nabla^2+2at+6b(\eta^*)^2\right]\underbrace{\chi_T(\boldsymbol{r},\boldsymbol{r}')}_{\beta G(\boldsymbol{r},\boldsymbol{r}')}&=\delta(\boldsymbol{r}-\boldsymbol{r}')\text{.}
+$$
+
+We can get $G(\boldsymbol{r},\boldsymbol{r}')$ by solving the above equations. 
+
+In principle, we should solve the differential equation directly and find $\eta*(\boldsymbol{r})$. However, we will assume that we are studying the physics near the homogeneous solution.
